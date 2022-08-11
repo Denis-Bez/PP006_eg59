@@ -1,21 +1,39 @@
 from flask import Blueprint, render_template
-
-from LibrarySiteElements import menu
+from Class_SQLAlchemy import Menu, Drop_menu, db
 
 quality = Blueprint('energy_quality', __name__, template_folder='templates', static_folder='static')
 
+
 @quality.route('/')
 def index():
-    return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    menu = get_menu()
+    if menu:
+        return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    else:
+        return render_template('error.html', title="Ошибка")
 
-@quality.route('/services')
-def services():
-    return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
 
 @quality.route('/objects')
 def objects():
-    return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    menu = get_menu()
+    if menu:
+        return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    else:
+        return render_template('error.html', title="Ошибка")
 
 @quality.route('/contact')
 def contact():
-    return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    menu = get_menu()
+    if menu:
+        return render_template('index_quality.html', title='Главная качество энергии', menu=menu)
+    else:
+        return render_template('error.html', title="Ошибка")
+
+# --- DATBASE CONTENT GETTING ---
+
+def get_menu():
+    try:
+        res = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
+        return res
+    except:
+        return False

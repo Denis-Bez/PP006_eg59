@@ -4,28 +4,15 @@
 
 {{ super() }}
 
-
-    <ul class="nav">
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">Качество энергии</a>
-        </li>
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">ТКИНЫ</a>
-        </li>
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">Статком</a>
-        </li>
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">УКРМ</a>
-        </li>
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">ТКИНЫ</a>
-        </li>
-        <li class="nav-item border border-primary">
-            <a class="nav-link active" aria-current="page" href="#">Компенсация реактивной мощности</a>
-        </li>
-    </ul>
-
+    {% for m in menu %}
+        {% if m.menu_name == 'quality' %}
+            <ul class="nav">
+                <li class="nav-item border border-primary">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for(m.url) }}">{{ m.title }}</a>
+                </li>
+            </ul>
+        {% endif %}
+    {% endfor -%}
 
 
 {% endblock %}

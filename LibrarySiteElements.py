@@ -3,7 +3,7 @@
 menu = {
     "mainmenu": [
         {"title": "О Компании", "url": "index", "class": "simpleElement"},
-        {"title": "Услуги", "url": ".services", "class": "dropmenu", "dropmenu": [
+        {"title": "Услуги", "url": "/services", "class": "dropmenu", "dropmenu": [
             {"title": "Электромонтажные работы", "url": "#"},
             {"title": "Поставка электрооборудования", "url": "#"},
             {"title": "Качество электроэнергии", "url": "/quality"},
