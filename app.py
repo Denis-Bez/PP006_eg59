@@ -22,7 +22,12 @@ app.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power qua
 
 
 # --- HEANDLERS BLOCK ---
-# Need to delete so many heandlers and do it dynamic generated. Remember DTY!
+# Need to delete so many heandlers and do it dynamic generated. Remember DRY!
+@app.route('/test')
+def test():
+            return render_template('test.html')
+
+
 @app.route('/')
 def index():
         menu = get_menu()
