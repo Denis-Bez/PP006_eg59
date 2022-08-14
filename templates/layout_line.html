@@ -4,15 +4,17 @@
 
 {{ super() }}
 
+<nav class="navbar navbar-expand-md align-items-center bg-white">
     {% for m in menu %}
-        {% if m.menu_name == 'quality' %}
-            <ul class="nav">
+        {% if m.menu_name == 'quality' %}     
+        <ul class="nav">
                 <li class="nav-item border border-primary">
                     <a class="nav-link active" aria-current="page" href="{{ url_for(m.url) }}">{{ m.title }}</a>
                 </li>
-            </ul>
+        </ul>
         {% endif %}
     {% endfor -%}
+</nav>    
 
 
 {% endblock %}
