@@ -4,21 +4,30 @@
 
 {{ super() }}
 
-<nav class="navbar navbar-expand-md align-items-center bg-white">
-    {% for m in menu %}
-        {% if m.menu_name == 'quality' %}     
-        <ul class="nav">
-                <li class="nav-item border border-primary">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for(m.url) }}">{{ m.title }}</a>
-                </li>
-        </ul>
-        {% endif %}
-    {% endfor -%}
-</nav>    
+<div class="container-fluid p-0">
+    <img src=" {{ url_for('static', filename='img/header_background.jpg') }} " alt="" class="img-fluid"> 
+</div>
+
+
+    <nav class="navbar navbar-expand-md align-items-center bg-white">
+        {% for m in menu %}
+            {% if m.menu_name == 'quality' %}     
+            <ul class="nav">
+                    <li class="nav-item border border-primary">
+                        <a class="nav-link active" aria-current="page" href="{{ m.url }}">{{ m.title }}</a>
+                    </li>
+            </ul>
+            {% endif %}
+        {% endfor -%}
+    </nav> 
 
 
 {% endblock %}
 
 
 {% block body %}
+
+
+
+
 {% endblock %}

@@ -29,6 +29,11 @@ def contact():
     else:
         return render_template('error.html', title="Ошибка")
 
+@quality.route('/<name>')
+def productCard(name):
+    return render_template('layout_productCard.html', title='Карточка продукта', menu=get_menu())
+
+
 # --- DATBASE CONTENT GETTING ---
 
 def get_menu():

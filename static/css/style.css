@@ -1,3 +1,8 @@
+:root {
+  --color1: #4283ae;
+  --color2: #333750;
+  --color3: #17191F;
+}
 
   /*--------------------------------------------------------------
   # Our Clients
@@ -81,4 +86,217 @@
 .team .member .social i {
   font-size: 18px;
   margin: 0 2px;
+}
+
+
+/*--------------------------------------------------------------
+# Product Card
+--------------------------------------------------------------*/
+.features .nav-tabs {
+  border: 0;
+}
+
+.features .nav-link {
+  padding: 15px 0;
+  transition: 0.3s;
+  color: #52565e;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  border: 0;
+  border-bottom: 4px solid #e2e4e6;
+}
+
+.features .nav-link i {
+  padding-right: 15px;
+  font-size: 48px;
+}
+
+.features .nav-link h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+@media (max-width: 575px) {
+  .features .nav-link h4 {
+    font-size: 16px;
+  }
+}
+
+.features .nav-link:hover {
+  color: #feb900;
+}
+
+.features .nav-link.active {
+  color: #feb900;
+  background-color: transparent;
+  border-color: #feb900;
+}
+
+.features .tab-content {
+  margin-top: 30px;
+}
+
+.features .tab-pane h3 {
+  font-weight: 700;
+  font-size: 32px;
+  position: relative;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.features .tab-pane h3:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #feb900;
+  left: 0;
+  bottom: 0;
+}
+
+.features .tab-pane ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features .tab-pane ul li {
+  padding-top: 10px;
+}
+
+.features .tab-pane ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #feb900;
+}
+
+.features .tab-pane p:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/*--------------------------------------------------------------
+# Item in Product Card
+--------------------------------------------------------------*/
+.about .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li {
+  padding-left: 28px;
+  position: relative;
+}
+
+.about .content ul li+li {
+  margin-top: 10px;
+}
+
+.about .content ul i {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 20px;
+  color: #006fbe;
+  line-height: 1;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .content .btn-learn-more {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 5px;
+  transition: 0.3s;
+  line-height: 1;
+  color: #006fbe;
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  margin-top: 6px;
+  border: 2px solid #006fbe;
+}
+
+.about .content .btn-learn-more:hover {
+  background: #006fbe;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Photos in Product Card
+--------------------------------------------------------------*/
+.recent-photos {
+  overflow: hidden;
+}
+
+.recent-photos .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.recent-photos .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  opacity: 1;
+  border: 1px solid #006fbe;
+}
+
+.recent-photos .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #006fbe;
+}
+
+.recent-photos .owl-nav,
+.recent-photos .owl-dots {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.recent-photos .owl-item {
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.recent-photos .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #95d3ff !important;
+}
+
+.recent-photos .owl-dot.active {
+  background-color: #006fbe !important;
+}
+
+.recent-photos .gallery-carousel .owl-stage-outer {
+  overflow: visible;
+}
+
+.recent-photos .gallery-carousel .center {
+  border: 6px solid #006fbe;
+  margin: -10px;
+  box-sizing: content-box;
+  padding: 4px;
+  background: #fff;
+  z-index: 1;
 }

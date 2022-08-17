@@ -27,3 +27,24 @@ class Drop_menu(db.Model):
 
     def __repr__(self):
         return f'<dropmenu {self.id}>'
+
+
+# class Solution(db.Model):
+#     pass
+
+
+# class Product(db.Model):
+#     pass
+
+
+# class Image(db.Model):
+#     pass
+
+
+# class Objects(db.Model):
+#     pass
+
+
+# class SEO(db.Model):
+#     pass
+
