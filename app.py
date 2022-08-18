@@ -2,14 +2,13 @@
 
 # Flask, WSGI libraries
 from flask import Flask, render_template
-from Class_SQLAlchemy import db, Menu, Drop_menu
+from Class_SQLAlchemy import db, Menu
 
 # Configuratins and castom libraries
 from config import CONFIG
 
-# Blueprint block
-from energy_quality.energy_quality import quality
-
+# # Blueprint block
+from Quality.quality import quality
 
 # --- CONFIGURATION BLOCK ---
 app = Flask (__name__)
@@ -23,6 +22,8 @@ app.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power qua
 
 # --- HEANDLERS BLOCK ---
 # Need to delete so many heandlers and do it dynamic generated. Remember DRY!
+
+
 @app.route('/')
 def index():
         menu = get_menu()
@@ -43,8 +44,8 @@ def activity():
 
 
 # Page with company's products
-@app.route('/products')
-def products():
+@app.route('/product')
+def product():
     menu = get_menu()
     if menu:
         return render_template('products.html', title="Продукция", menu=menu)
@@ -77,6 +78,8 @@ def contact():
 def get_menu():
     try:
         res = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
+        # for r in res:
+        #     print(r.id)
         return res
     except:
         return False
@@ -86,4 +89,6 @@ def get_menu():
 if __name__ == "__main__": 
     # db.create_all() # Uncomment For creating new tables
     app.run(debug=True)
+    
+    
     

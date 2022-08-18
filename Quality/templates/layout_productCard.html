@@ -8,9 +8,14 @@
 {% endblock %}
 
 
-{% block body %}
+{% block bodynav %}
 
+{{ super() }}
 
+{% endblock %}
+
+{% block bodymain %}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 <section id="about" class="about py-3">
     <div class="container">
 
@@ -196,6 +201,7 @@
 
     </div>
   </section>
+</main>
 
-
+{{ super() }}
 {% endblock %}

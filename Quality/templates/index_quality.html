@@ -1,13 +1,18 @@
 {% extends "layout_line.html" %}
 
 
-{% block body %}
+{% block bodynav %}
 
 {{ super() }}
 
-<div class="container mt-4 p-4 bg-white">
-    <div class="row">
-        <div class="col">
+{% endblock %}
+
+
+{% block bodymain %}
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
             <h2>Качество энергии</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis quas fugit modi. Vitae laborum quia aspernatur 
                 accusamus aliquam corporis at excepturi rem voluptas tempora praesentium dolor esse laudantium autem, labore ex voluptatibus 
@@ -33,22 +38,19 @@
                 expedita pariatur. Ratione, eos porro tempora minus optio nam nulla dolorem beatae odio? Vel debitis ex quibusdam repellat suscipit 
                 qui placeat perspiciatis repudiandae optio consequuntur delectus magni velit ipsam nulla quaerat, unde et maiores quisquam facilis 
                 pariatur rerum? Magnam dolor eius perferendis quam.</p>
-        </div>
-    </div>
-</div>
 
-<div class="container mt-4 p-4 bg-white">
-    <div class="row">
-        <div class="col">
+
             <h2>Особенности</h2>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis quas fugit modi. Vitae laborum quia aspernatur 
                 accusamus aliquam corporis at excepturi rem voluptas tempora praesentium dolor esse laudantium autem, labore ex voluptatibus 
                 earum neque voluptates vel exercitationem in. Adipisci earum dolorem cum harum saepe numquam ab commodi provident eius. 
                 Perferendis ab quibusdam iste? Reprehenderit, rerum veniam aliquam provident possimus eum deleniti praesentium, mollitia 
             </p>
-        </div>
-    </div>
-</div>
+        </main>
 
-
+        {{ super() }}
 {% endblock %}
+            
+
+
+

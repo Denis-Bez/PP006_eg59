@@ -22,6 +22,7 @@
 </head>
 
 <header>
+
     
 {% block header %}
             <nav class="navbar navbar-expand-md align-items-center bg-white">
@@ -36,16 +37,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0">
 
-                        {% for m in menu %}
+                        {% for m in menu %} 
                             {% if m.menu_name == 'main' %}
                                 {% if m.button_type == 'dropmenu'%}
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="{{ url_for(m.url) }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {{m.title}}
+                                        {{ m.title }}
                                     </a>
                                     <ul class="dropdown-menu">
-                                        {% for d in m.drop %}
-                                            <li><a class="dropdown-item" href="{{ d.url }}">{{ d.title }}</a></li>
+                                        {% for d in m[m.url] %}
+                                            <li><a class="dropdown-item" href="{{ url_for('energy_quality.productCard', name='statcom') }}">{{ d.title }}</a></li>
                                         {% endfor %}
                                     </ul>    
                                 </li>
@@ -68,7 +69,10 @@
 
 <body class="bg-light">
 
-    {% block body %}
+    {% block bodynav %}
+    {% endblock %}
+
+    {% block bodymain %}
     {% endblock %}
 
 <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"
@@ -199,7 +203,7 @@ crossorigin="anonymous"></script>
       Общество с ограниченной ответственностью «ЭНЕРГОгрупп»
     </div>
     <!-- Copyright -->
-  </footer>
+</footer>
 </div>
 
 </html>

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template
-from Class_SQLAlchemy import Menu, Drop_menu, db
+from Class_SQLAlchemy import db, Menu
 
-quality = Blueprint('energy_quality', __name__, template_folder='templates', static_folder='static')
+quality = Blueprint('quality', __name__, template_folder='templates', static_folder='static')
 
 
 @quality.route('/')
