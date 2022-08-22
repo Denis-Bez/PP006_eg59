@@ -9,6 +9,7 @@ from config import CONFIG
 
 # # Blueprint block
 from Quality.quality import quality
+from Bushing.bushing import bushing
 
 # --- CONFIGURATION BLOCK ---
 app = Flask (__name__)
@@ -18,6 +19,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 app.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power quality" business line
+app.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "Transformer " business line
 
 
 # --- HEANDLERS BLOCK ---

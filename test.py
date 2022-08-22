@@ -1,8 +1,8 @@
 
 
 def start():
-    username = '__Kuzya__'
-    print('<User %s>' % username)
+    a = "'quality.productCard', name='statcom'"
+    print(a.strip())
 
 
 if __name__ == "__main__":

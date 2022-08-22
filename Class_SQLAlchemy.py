@@ -34,7 +34,7 @@ class Solutions_menu(db.Model):
     product_menu = db.relationship('Product_menu', backref='solutions_menu', lazy=True)
     solution = db.relationship('Solution', backref='solutions_menu', lazy=True)
     product = db.relationship('Product', backref='solutions_menu', lazy=True)
-    property = db.relationship('Property_menu', backref='solutions_menu', lazy=True)
+    property = db.relationship('Property_menu', backref='solutions_menu', lazy=True) # Need name - 'property_menu'
     objects = db.relationship('Objects', backref='solutions_menu', lazy=True)
     seo = db.relationship('SEO', backref='solutions_menu', lazy=True)
 
