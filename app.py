@@ -34,11 +34,11 @@ def index():
 
 
 # Page with List of business activities
-@app.route('/activity')
-def activity():
+@app.route('/solutions')
+def solutions():
     menu = get_menu()
     if menu:
-        return render_template('activity.html', title="Направления", menu=menu)
+        return render_template('solutions.html', title="Направления", menu=menu)
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -78,9 +78,7 @@ def contact():
 def get_menu():
     try:
         res = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
-        # for r in res:
-        #     print(r.id)
-        return res
+        return res 
     except:
         return False
 
