@@ -23,7 +23,7 @@ class Solutions_menu(db.Model):
     id = db.Column(db.Integer, unique=True, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     url = db.Column(db.String(100), nullable=False)
-    menu_name = db.Column(db.String(100), nullable=False)
+    menu_name = db.Column(db.String(100), nullable=False) # Correct to url_name and nullable=True
     visibility = db.Column(db.String(50), nullable=False)
     priorities = db.Column(db.Integer)
     button_type = db.Column(db.String(50), nullable=True)
@@ -84,7 +84,7 @@ class Property_menu(db.Model):
 
 class Solution(db.Model):
     id = db.Column(db.Integer, unique=True, primary_key=True)
-    index_content = db.Column(db.String(10000), nullable=True)
+    index_content = db.Column(db.String(10000), nullable=True) # May be 20 000 symbols?
     title = db.Column(db.String(1000), nullable=True)
     short_discription = db.Column(db.String(2000), nullable=True)
     photo = db.Column(db.String(500), nullable=True)
@@ -104,7 +104,7 @@ class Product(db.Model):
     short_discription = db.Column(db.String(2000), nullable=True)
     url = db.Column(db.String(100), nullable=True)
     photo = db.Column(db.String(500), nullable=True)
-    index_content = db.Column(db.String(10000), nullable=True)
+    index_content = db.Column(db.String(10000), nullable=True) # Need more symbols (50 000 - 100 000)
     questionnaire = db.Column(db.String(4000), nullable=True)
     visibility = db.Column(db.String(50), nullable=False)
     priorities = db.Column(db.Integer)
@@ -120,6 +120,7 @@ class Product(db.Model):
         return f'<product {self.id}>'
 
 
+# Delete
 class Blocks(db.Model):
     id = db.Column(db.Integer, unique=True, primary_key=True)
     title = db.Column(db.String(1000), nullable=True)
@@ -157,6 +158,7 @@ class SEO(db.Model):
     title = db.Column(db.String(1000), nullable=True)
     discription = db.Column(db.String(3000), nullable=True)
     note = db.Column(db.String(2000), nullable=True)
+    # Need invite 'url_name
 
     solutions_menu_id = db.Column(db.Integer, db.ForeignKey('solutions_menu.id'), nullable=True)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=True)

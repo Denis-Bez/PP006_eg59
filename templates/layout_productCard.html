@@ -16,191 +16,22 @@
 
 {% block bodymain %}
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-<section id="about" class="about py-3">
-    <div class="container">
 
-      <div class="section-title">
-        <h2>Серия HVC Высоковольтное оборудование локальной компенсации реактивной мощности</h2>
-        <p>Высоковольтный локальный компенсатор реактивной мощности серии HVC широко используется в высоковольтном электрооборудовании высокой мощности 
-            в металлургии, горнодобывающей, нефтехимической промышленности, дренаже и других областях. 
-        </p>
-      </div>
+  {% for menu in product_menu %}
+    
+    {% if product.button_type == 'single' %}
+      
+      {% for product in menu['product'] %}
+        {% if product.url == name %}
+          {{ product.index_content|safe }}
+        {% endif %}
+      {% endfor %}
 
-      <div class="row content">
-        <div class="col-lg-3">
-          <img src="{{ url_for('static', filename='img/product_HVC.jpg') }}" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-9 pt-4 pt-lg-0">
-          <p>
-            Помогает решить следующие проблемы:
-          </p>
-          <ul>
-            <li><i class="bi bi-check2-all"></i> Компенсация потерь в проводах при передаче на большие расстояния</li>
-            <li><i class="bi bi-check2-all"></i> Увеличении коэффициента мощности</li>
-            <li><i class="bi bi-check2-all"></i> Уменьшение потерь в линии</li>
-            <li><i class="bi bi-check2-all"></i> Экономия энергии</li>
-            <li><i class="bi bi-check2-all"></i> Стабилизация напряжения</li>
-          </ul>
-          <p>
-            Высоковольтный локальный компенсатор реактивной мощности серии HVC 
-            в основном состоит из шунтирующих конденсаторов и оснащен блоками защиты, которые подключены к трехфазной системе распределения 
-            электроэнергии переменного тока частотой 50 или 60 Гц и номинальным напряжением 3-10 кВ и установлены вокруг асинхронного 
-            генератора или индуктивного оборудования.
-          </p>
-          <a href="#" class="btn-learn-more">ОСТАВИТЬ ЗАЯВКУ</a>
-        </div>
-      </div>
+    {% elif product.button_type == 'dropmenu' %}
+    {% endif %}
 
-    </div>
-  </section>
-
-
-    <!-- ======= Recent Photos Section ======= -->
-    <section id="recent-photos" class="recent-photos py-3">
-        <div class="container">
+  {% endfor %}
   
-          <div class="recent-photos-slider swiper">
-            <div class="swiper-wrapper align-items-center">
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-              <div class="swiper-slide"><a href="{{ url_for('static', filename='img/logo.png') }}" class="glightbox"><img src="{{ url_for('static', filename='img/carousel.jpg') }}" class="img-fluid" alt=""></a></div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-  
-        </div>
-      </section><!-- End Recent Photos Section -->
-
-
-<!-- ======= Features Section ======= -->
-<section id="features" class="features section-bg pt-4">
-    <div class="container-fluid" data-aos="fade-up">
-
-      <ul class="nav nav-tabs row  g-2 d-flex">
-
-        <li class="nav-item col-3">
-          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-            <h4>Описание</h4>
-          </a>
-        </li><!-- End tab nav item -->
-
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-            <h4>Документация</h4>
-          </a><!-- End tab nav item -->
-
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-            <h4>Функции</h4>
-          </a>
-        </li><!-- End tab nav item -->
-
-        <li class="nav-item col-3">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-            <h4>Опросный лист</h4>
-          </a>
-        </li><!-- End tab nav item -->
-
-      </ul>
-
-      <div class="tab-content">
-
-        <div class="tab-pane active show" id="tab-1">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-              <h3>Voluptatem dignissimos provident</h3>
-              <p class="fst-italic">
-                Высоковольтный локальный компенсатор реактивной мощности серии HVC широко используется в высоковольтном электрооборудовании высокой мощности 
-                в металлургии, горнодобывающей, нефтехимической промышленности, дренаже и других областях. 
-                Высоковольтный локальный компенсатор реактивной мощности серии HVC 
-                в основном состоит из шунтирующих конденсаторов и оснащен блоками защиты, которые подключены к трехфазной системе распределения 
-                электроэнергии переменного тока частотой 50 или 60 Гц и номинальным напряжением 3-10 кВ и установлены вокруг асинхронного 
-                генератора или индуктивного оборудования.
-              </p>
-              <ul>
-                <li><i class="bi bi-check2-all"></i> Компенсация потерь в проводах при передаче на большие расстояния</li>
-                <li><i class="bi bi-check2-all"></i> Увеличении коэффициента мощности</li>
-                <li><i class="bi bi-check2-all"></i> Уменьшение потерь в линии</li>
-                <li><i class="bi bi-check2-all"></i> Экономия энергии</li>
-                <li><i class="bi bi-check2-all"></i> Стабилизация напряжения</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
-              <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " alt="" class="img-fluid">
-            </div>
-          </div>
-        </div><!-- End tab content item -->
-
-        <div class="tab-pane" id="tab-2">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-              <h3>Neque exercitationem debitis</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check2-all"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src=" {{ url_for('static', filename='img/product_HVC.jpg') }} " alt="" class="img-fluid">
-            </div>
-          </div>
-        </div><!-- End tab content item -->
-
-        <div class="tab-pane" id="tab-3">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-              <h3>Voluptatibus commodi accusamu</h3>
-              <ul>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check2-all"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-              </ul>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " alt="" class="img-fluid">
-            </div>
-          </div>
-        </div><!-- End tab content item -->
-
-        <div class="tab-pane" id="tab-4">
-          <div class="row">
-            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
-              <h3>Omnis fugiat ea explicabo sunt</h3>
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src=" {{ url_for('static', filename='img/product_HVC.jpg') }} " alt="" class="img-fluid">
-            </div>
-          </div>
-        </div><!-- End tab content item -->
-
-      </div>
-
-    </div>
-  </section>
 </main>
 
 {{ super() }}

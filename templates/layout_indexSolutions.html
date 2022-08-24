@@ -1,0 +1,26 @@
+{% extends "layout_line.html" %}
+
+
+{% block bodynav %}
+
+{{ super() }}
+
+{% endblock %}
+
+
+{% block bodymain %}
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+    {{ solutions.index_content|safe }}
+
+
+</main>
+
+        {{ super() }}
+{% endblock %}
+            
+
+
+
