@@ -19,19 +19,43 @@
 
   {% for menu in product_menu %}
     
-    {% if product.button_type == 'single' %}
+    {% if menu.button_type == 'single' or single_product %}
       
       {% for product in menu['product'] %}
-        {% if product.url == name %}
+        {% if product.url == url_name %}
           {{ product.index_content|safe }}
         {% endif %}
       {% endfor %}
 
-    {% elif product.button_type == 'dropmenu' %}
+    {% elif menu.button_type == 'dropmenu' and menu.menu_name == url_name %}
+            
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          
+          {% for product in menu['product'] %}
+          <div class="col">
+            <div class="card shadow-sm">
+              {{ product.photo|safe }}
+              <div class="card-body">
+                <p class="card-text">{{ product.short_discription }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="button" href="{{ menu.menu_name + '/' + product.url }}">Подробнее</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+        
+        
+      
     {% endif %}
 
   {% endfor %}
-  
 </main>
 
 {{ super() }}

@@ -17,7 +17,13 @@
 
         
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
-    <title>{{title}}</title>
+    
+    {% for s in seo %}
+      {% if s.note == url_name %}
+      <title>{{ s.title }}</title>
+      <meta name="description" content="{{ s.discription }}"/>
+      {% endif %}
+    {% endfor %}
 
 </head>
 
@@ -25,7 +31,7 @@
 
     
 {% block header %}
-            <nav class="navbar navbar-expand-md align-items-center bg-white">
+            <nav class="navbar navbar-expand-md align-items-center bg-white"> 
                 <a class="navbar-brand m-1" href="{{ url_for('.index') }}">
                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png" style="max-height: 40px">
                 </a>
@@ -45,7 +51,7 @@
                                   </a>
                                   <ul class="dropdown-menu">
                                       {% for d in m[m.menu_name] %}
-                                      <li><a class="dropdown-item" href={{ url_for(d.url, name=d.note) }}> {{ d.title }} </a></li>
+                                        <li><a class="dropdown-item" href={{ url_for(d.url, product=d.note) }}> {{ d.title }} </a></li>
                                       {% endfor %}
                                   </ul>    
                               </li>
@@ -55,12 +61,68 @@
                               </li>
                           {% endif %}
                         {% endfor -%}
+                        <li class="nav-item">
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
+                      </li>
                     </ul>
 
                 </div>
             </nav>
 {% endblock %}
-    
+
+
+
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white">
+      <div class="modal-header">
+        <h5 class="modal-title" id="Modal">Оставьте заявку на экспертизу и мы с вами свяжемся</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <form action="#" method="post">
+                <div class="mb-3">
+                  <label for="InputName1" class="form-label">Имя контактного лица</label>
+                  <input type="text" name="name" class="form-control" id="InputName1" placeholder="Имя">
+                </div>
+
+                <div class="mb-3">
+                  <label for="InputPhone1" class="form-label">Номер телефона</label>
+                  <input type="text" name="phone" class="form-control" id="InputPhone1"
+                    placeholder="Телефон с кодом города">
+                </div>
+
+                <div class="mb-3">
+                  <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
+                  <input type="email" name="email" class="form-control" id="InputEmail1"
+                    placeholder="example@email.ru">
+                </div>
+
+                <div class="mb-3">
+                  <label for="InputTextarea1" class="form-label">Обращение</label>
+                  <textarea class="form-control" name="text" id="InputTextarea1" rows="3"
+                    placeholder="Текст заявки"></textarea>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="checkboxHeader" name="checkbox" checked
+                    required>
+                  <label class="form-check-label small" for="checkboxHeader">Принимаю условия «Политики конфиденциальности»</label>
+                </div>
+
+                <button type="submit" name="submit" id="submitHeader" class="btn btn-primary">Отправить</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </header>
 

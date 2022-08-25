@@ -158,10 +158,10 @@ class SEO(db.Model):
     title = db.Column(db.String(1000), nullable=True)
     discription = db.Column(db.String(3000), nullable=True)
     note = db.Column(db.String(2000), nullable=True)
-    # Need invite 'url_name
+    # Need invite 'url_name'
 
     solutions_menu_id = db.Column(db.Integer, db.ForeignKey('solutions_menu.id'), nullable=True)
-    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=True)
+    product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=True) # Need?
     property_menu_id = db.Column(db.Integer, db.ForeignKey('property_menu.id'), nullable=True)
     objects_id = db.Column(db.Integer, db.ForeignKey('objects.id'), nullable=True)
     
