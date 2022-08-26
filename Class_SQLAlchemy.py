@@ -35,7 +35,7 @@ class Solutions_menu(db.Model):
     property_menu = db.relationship('Property_menu', backref='solutions_menu', lazy=True)
     solution = db.relationship('Solution', backref='solutions_menu', lazy=True)
     product = db.relationship('Product', backref='solutions_menu', lazy=True)
-    objects = db.relationship('Objects', backref='solutions_menu', lazy=True)
+    object = db.relationship('Object', backref='solutions_menu', lazy=True)
     seo = db.relationship('SEO', backref='solutions_menu', lazy=True)
 
     def __repr__(self):
@@ -119,7 +119,7 @@ class Product(db.Model):
         return f'<product {self.id}>'
 
 
-class Objects(db.Model):  
+class Object(db.Model):  
     id = db.Column(db.Integer, unique=True, primary_key=True)
     title = db.Column(db.String(1000), nullable=True)
     url = db.Column(db.String(100), nullable=True)
@@ -130,7 +130,7 @@ class Objects(db.Model):
     note = db.Column(db.String(200), nullable=True)
 
     solutions_menu_id = db.Column(db.Integer, db.ForeignKey('solutions_menu.id'), nullable=True)
-    seo = db.relationship('SEO', backref='objects', lazy=True)
+    seo = db.relationship('SEO', backref='object', lazy=True)
     
     def __repr__(self):
         return f'<objects {self.id}>'
@@ -146,7 +146,7 @@ class SEO(db.Model):
     solutions_menu_id = db.Column(db.Integer, db.ForeignKey('solutions_menu.id'), nullable=True)
     product_id = db.Column(db.Integer, db.ForeignKey('product.id'), nullable=True)
     property_menu_id = db.Column(db.Integer, db.ForeignKey('property_menu.id'), nullable=True)
-    objects_id = db.Column(db.Integer, db.ForeignKey('objects.id'), nullable=True)
+    object_id = db.Column(db.Integer, db.ForeignKey('object.id'), nullable=True)
     
     def __repr__(self):
         return f'<seo {self.id}>'

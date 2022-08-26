@@ -43,21 +43,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-lg-0">
 
-                        {% for m in menu %} 
-                          {% if m.button_type == 'dropmenu'%}
+                        {% for item in menu %} 
+                          {% if item.button_type == 'dropmenu'%}
                               <li class="nav-item dropdown">    
-                                  <a class="nav-link dropdown-toggle" href="{{ m.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      {{ m.title }}
+                                  <a class="nav-link dropdown-toggle" href="{{ item.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      {{ item.title }}
                                   </a>
                                   <ul class="dropdown-menu">
-                                      {% for d in m[m.menu_name] %}
-                                        <li><a class="dropdown-item" href={{ url_for(d.url, product=d.note) }}> {{ d.title }} </a></li>
+                                      {% for drop in item[item.url_name] %}
+                                        <li><a class="dropdown-item" href={{ url_for(drop.url, product=drop.url_name) }}> {{ drop.title }} </a></li>
                                       {% endfor %}
                                   </ul>    
                               </li>
                           {% else %}
                               <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="{{ url_for(m.url) }}">{{ m.title }}</a>
+                                  <a class="nav-link active" aria-current="page" href="{{ url_for(item.url) }}">{{ item.title }}</a>
                               </li>
                           {% endif %}
                         {% endfor -%}
