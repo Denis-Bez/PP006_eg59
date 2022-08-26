@@ -75,6 +75,15 @@ def contact():
         return render_template('error.html', title="Ошибка")
 
 
+@app.route('/objects/<object>')
+def object(object):
+    menu = get_menu()
+    if menu:
+        return render_template('layout_object.html', menu=menu, object=object)
+    else:
+        return render_template('error.html', title="Ошибка")
+
+
 # --- DATBASE CONTENT GETTING ---
 
 def get_menu():
@@ -83,6 +92,10 @@ def get_menu():
         return res 
     except:
         return False
+
+
+def get_content():
+    pass
 
 
 # --- START SERVER ---
