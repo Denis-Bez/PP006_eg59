@@ -27,107 +27,118 @@
 
 </head>
 
-<header>
+
+
+
+<body class="bg-light">
+
+  <section id="topbar" class="topbar d-flex align-items-center p-1">
+    <div class="container d-flex justify-content-center justify-content-md-end">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:office@eg59.ru">office@eg59.ru</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+7 (342) 200-85-05</span></i>
+      </div>
+    </div>
+  </section>
+
+
+  <header>
 
     
-{% block header %}
-            <nav class="navbar navbar-expand-md align-items-center bg-white"> 
-                <a class="navbar-brand m-1" href="{{ url_for('.index') }}">
-                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png" style="max-height: 40px">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+    {% block header %}
+                <nav class="navbar navbar-expand-md d-flex align-items-center bg-white shadow"> 
+                    <a class="navbar-brand m-3" href="{{ url_for('.index') }}">
+                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png" style="max-height: 60px">
+                    </a>
+                    <button type="button" class="btn btn-info shadow ms-auto m-2 d-sm-flex d-md-none" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
+                    <button class="navbar-toggler m-2 shadow" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-lg-0">
-
-                        {% for item in menu %} 
-                          {% if item.button_type == 'dropmenu'%}
-                              <li class="nav-item dropdown">    
-                                  <a class="nav-link dropdown-toggle" href="{{ item.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      {{ item.title }}
-                                  </a>
-                                  <ul class="dropdown-menu">
-                                      {% for drop in item[item.url_name] %}
-                                        <li><a class="dropdown-item" href={{ url_for(drop.url, product=drop.url_name) }}> {{ drop.title }} </a></li>
-                                      {% endfor %}
-                                  </ul>    
-                              </li>
-                          {% else %}
-                              <li class="nav-item">
-                                  <a class="nav-link active" aria-current="page" href="{{ url_for(item.url) }}">{{ item.title }}</a>
-                              </li>
-                          {% endif %}
-                        {% endfor -%}
-                        <li class="nav-item">
-                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
-                      </li>
-                    </ul>
-
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-lg-0">
+    
+                            {% for item in menu %} 
+                              {% if item.button_type == 'dropmenu'%}
+                                  <li class="nav-item dropdown">    
+                                      <a class="nav-link dropdown-toggle active" href="{{ item.url }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          {{ item.title }}
+                                      </a>
+                                      <ul class="dropdown-menu">
+                                          {% for drop in item[item.url_name] %}
+                                            <li><a class="dropdown-item" href={{ url_for(drop.url, product=drop.url_name) }}> {{ drop.title }} </a></li>
+                                          {% endfor %}
+                                      </ul>    
+                                  </li>
+                              {% else %}
+                                  <li class="nav-item">
+                                      <a class="nav-link active" aria-current="page" href="{{ url_for(item.url) }}">{{ item.title }}</a>
+                                  </li>
+                              {% endif %}
+                            {% endfor -%}
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-info shadow ms-auto mx-3 d-md-flex d-none align-items-center" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
+                  </nav>
+                
+    {% endblock %}
+    
+      
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content text-white">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Modal">Оставьте заявку на экспертизу и мы с вами свяжемся</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <form action="#" method="post">
+                    <div class="mb-3">
+                      <label for="InputName1" class="form-label">Имя контактного лица</label>
+                      <input type="text" name="name" class="form-control" id="InputName1" placeholder="Имя">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="InputPhone1" class="form-label">Номер телефона</label>
+                      <input type="text" name="phone" class="form-control" id="InputPhone1"
+                        placeholder="Телефон с кодом города">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
+                      <input type="email" name="email" class="form-control" id="InputEmail1"
+                        placeholder="example@email.ru">
+                    </div>
+    
+                    <div class="mb-3">
+                      <label for="InputTextarea1" class="form-label">Обращение</label>
+                      <textarea class="form-control" name="text" id="InputTextarea1" rows="3"
+                        placeholder="Текст заявки"></textarea>
+                    </div>
+    
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="checkboxHeader" name="checkbox" checked
+                        required>
+                      <label class="form-check-label small" for="checkboxHeader">Принимаю условия «Политики конфиденциальности»</label>
+                    </div>
+    
+                    <button type="submit" name="submit" id="submitHeader" class="btn btn-primary">Отправить</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                  </form>
                 </div>
-            </nav>
-{% endblock %}
-
-
-
-<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content text-white">
-      <div class="modal-header">
-        <h5 class="modal-title" id="Modal">Оставьте заявку на экспертизу и мы с вами свяжемся</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <form action="#" method="post">
-                <div class="mb-3">
-                  <label for="InputName1" class="form-label">Имя контактного лица</label>
-                  <input type="text" name="name" class="form-control" id="InputName1" placeholder="Имя">
-                </div>
-
-                <div class="mb-3">
-                  <label for="InputPhone1" class="form-label">Номер телефона</label>
-                  <input type="text" name="phone" class="form-control" id="InputPhone1"
-                    placeholder="Телефон с кодом города">
-                </div>
-
-                <div class="mb-3">
-                  <label for="InputEmail1" class="form-label">Адрес электронной почты</label>
-                  <input type="email" name="email" class="form-control" id="InputEmail1"
-                    placeholder="example@email.ru">
-                </div>
-
-                <div class="mb-3">
-                  <label for="InputTextarea1" class="form-label">Обращение</label>
-                  <textarea class="form-control" name="text" id="InputTextarea1" rows="3"
-                    placeholder="Текст заявки"></textarea>
-                </div>
-
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="checkboxHeader" name="checkbox" checked
-                    required>
-                  <label class="form-check-label small" for="checkboxHeader">Принимаю условия «Политики конфиденциальности»</label>
-                </div>
-
-                <button type="submit" name="submit" id="submitHeader" class="btn btn-primary">Отправить</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+    
+    </header>
 
-</header>
-
-
-<body class="bg-light">
 
     {% block bodynav %}
     {% endblock %}
@@ -148,7 +159,7 @@ crossorigin="anonymous"></script>
 
 <script>
 
-
+// It's in 'objects' preview
         var lightboxInlineIframe = GLightbox({
             selector: '.glightbox4'
         });

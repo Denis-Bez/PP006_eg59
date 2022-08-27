@@ -2,7 +2,7 @@
 
 # Flask, WSGI libraries
 from flask import Flask, render_template
-from Class_SQLAlchemy import db, Menu
+from Class_SQLAlchemy import db, Menu, Solutions_menu
 
 # Configuratins and castom libraries
 from config import CONFIG
@@ -28,9 +28,9 @@ app.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "Transform
 
 @app.route('/')
 def index():
-        menu = get_menu()
-        if menu:
-            return render_template('index.html', title="Главная страница", menu=menu)
+        content = get_all([Menu, Solutions_menu])
+        if content:
+            return render_template('index.html', title="Главная страница", menu=content[0], solution_menu=content[1])
         else:
             return render_template('error.html', title="Ошибка")
 
@@ -38,7 +38,7 @@ def index():
 # Page with List of business activities
 @app.route('/solutions')
 def solutions():
-    menu = get_menu()
+    menu = get_all([Menu])
     if menu:
         return render_template('solutions.html', title="Направления", menu=menu)
     else:
@@ -48,7 +48,7 @@ def solutions():
 # Page with company's products
 @app.route('/product')
 def product():
-    menu = get_menu()
+    menu = get_all([Menu])
     if menu:
         return render_template('products.html', title="Продукция", menu=menu)
     else:
@@ -58,7 +58,7 @@ def product():
 # Page with infotmation about the company's completed works
 @app.route('/objects')
 def objects():
-    menu = get_menu()
+    menu = get_all([Menu])
     if menu:
         return render_template('objects.html', title="Наши объекты", menu=menu)
     else:
@@ -68,7 +68,7 @@ def objects():
 # Page with the company's contacts
 @app.route('/contact')
 def contact():
-    menu = get_menu()
+    menu = get_all([Menu])
     if menu:
         return render_template('contact.html', title="Наши объекты", menu=menu)
     else:
@@ -77,7 +77,7 @@ def contact():
 
 @app.route('/objects/<object>')
 def object(object):
-    menu = get_menu()
+    menu = get_all([Menu])
     if menu:
         return render_template('layout_object.html', menu=menu, object=object)
     else:
@@ -86,16 +86,14 @@ def object(object):
 
 # --- DATBASE CONTENT GETTING ---
 
-def get_menu():
+def get_all(tables):
+    res = []
     try:
-        res = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
+        for table in tables:
+            res.append(table.query.filter_by(visibility='visible').order_by(table.priorities).all())
         return res 
     except:
         return False
-
-
-def get_content():
-    pass
 
 
 # --- START SERVER ---
