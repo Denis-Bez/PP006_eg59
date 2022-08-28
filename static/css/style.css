@@ -4,6 +4,91 @@
   --color3: #17191F;
 }
 
+.bg1 {
+  background-color: var(--color1);
+}
+.bg2 {
+  background-color: var(--color2);
+}
+.bgg1 {
+  background: var(--color2);
+  background: -moz-linear-gradient(left, var(--color2) 0%, #207cca 50%, #2989d8 50%, #207cca 50%, var(--color1) 100%);
+  background:-webkit-linear-gradient(left, var(--color2) 0%,#207cca 50%,#2989d8 50%,#207cca 50%, var(--color1) 100%);
+  background: linear-gradient(to right, var(--color2) 0%,#207cca 50%,#2989d8 50%,#207cca 50%, var(--color1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color2), endColorstr=var(--color1),GradientType=1 );
+  background-size: contain;
+}
+.bgg2 {
+background: var(--color1);
+background: -moz-linear-gradient(left, var(--color1) 0%, #207cca 50%, #2989d8 50%, #207cca 50%, var(--color2) 100%);
+background:-webkit-linear-gradient(left, var(--color1) 0%,#207cca 50%,#2989d8 50%,#207cca 50%, var(--color2) 100%);
+background: linear-gradient(to right, var(--color1) 0%,#207cca 50%,#2989d8 50%,#207cca 50%, var(--color2) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color1), endColorstr=var(--color2),GradientType=1 );
+background-size: contain;
+}
+
+.btn {
+  border-width: 0;
+  background: var(--color2);
+  color: white;
+}
+.btn:hover {
+  border-width: 0;
+  background: var(--color1);
+  color: white;
+}
+.btn:focus {
+  box-shadow: none;
+  background: var(--color2);
+  color: white;
+}
+
+.nav-item:hover {
+  color: var(--color2);
+  text-decoration: underline;
+}
+
+
+.topbar {
+  background: var(--color2);
+  height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+  color: #fff;
+  padding: 0;
+}
+
+.topbar .contact-info i {
+  font-style: normal;
+  color: #fff;
+  line-height: 0;
+}
+
+.topbar .contact-info i a,
+.topbar .contact-info i span {
+  padding-left: 5px;
+  color: #fff;
+}
+
+@media (max-width: 575px) {
+
+  .topbar .contact-info i a,
+  .topbar .contact-info i span {
+    font-size: 13px;
+  }
+}
+
+.topbar .contact-info i a {
+  line-height: 0;
+  transition: 0.3s;
+}
+
+.topbar .contact-info i a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+
   /*--------------------------------------------------------------
   # Our Clients
   --------------------------------------------------------------*/

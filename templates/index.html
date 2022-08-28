@@ -3,43 +3,43 @@
 
 {% block bodymain %}
 
-<div class="container pt-5">
-
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+<div class="container p-2 mt-3 bg-white shadow">
+  <h2>Направления деятельности</h2>
+    <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          {% for solutions in solution_menu %}
+            {% if solutions.priorities == 0 %}
+              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" class="active" aria-current="true" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
+            {% elif solutions.priorities != 0 %}
+              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
+            {% endif %}
+          {% endfor %}
         </div>
-        <a href="/quality" target="_blank">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Качество энергии</h5>
-              <p>Качество энергии. СТАТКОМ, ДКИНы, Фильтры гармоник, УКРМ, КРМ, АКУ, КСО</p>
-            </div>
-          </div>
-        </a>
-          <div class="carousel-item">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Поставка оборудования</h5>
-              <p>Поставка оборудования для промышленных предприятий</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Экспертиза</h5>
-              <p>Электротехническая экспертиза, судебная и досудебная</p>
-            </div>
+
+        {% for solutions in solution_menu %}
+          <a href="{{ url_for(solutions.url) }}" target="_blank">
+            {% if solutions.priorities == 0 %}
+              <div class="carousel-item active" data-bs-interval="3000">
+            {% elif solutions.priorities != 0 %}
+              <div class="carousel-item" data-bs-interval="3000">
+            {% endif %}
+            {% for content in solutions['solution'] %}
+              <img src=" {{ content.photo }} " class="d-block w-100" alt="...">
+              <div class="carousel-caption">
+                <h5>{{ content.title }}</h5>
+                <p class="d-none d-md-block">{{ content.short_discription }}</p>
+              </div>
+            {% endfor %}
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        </a>
+        {% endfor %}
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -48,7 +48,7 @@
 </div>
 
 
-<div class="container mt-4 py-4">
+<div class="container mt-4 py-4 bg-white shadow">
     <div class="row">
         <div class="col">
 
@@ -65,7 +65,7 @@
 
 
 <!-- Сделать блок с пагинацией -->
-<div class="container mt-4 py-4">
+<div class="container mt-4 py-4 bg-white shadow">
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
       <div class="col">
@@ -119,7 +119,7 @@
   </div>
 
 
-<div class="container mt-4 py-4">
+<div class="container mt-4 py-4 bg-white shadow">
     <div class="row">
         <div class="col">
 
@@ -135,8 +135,8 @@
 </div>
 
 
-<!-- <section id="clients" class="clients mt-4 py-4 bg-light"> -->
-  <div class="container clients mt-4 py-4">
+<!-- <section id="clients" class="clients mt-4 py-4"> -->
+  <div class="container clients mt-4 py-4 bg-white shadow">
     <div class="section-title">
       <h2>Наши партнеры</h2>
       <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
@@ -159,7 +159,7 @@
 
 
 <!-- <section id="team" class="team section-bg mt-4 py-4 bg-light"> -->
-  <div class="container team section-bg mt-4 py-4">
+  <div class="container team section-bg mt-4 py-4 bg-white shadow">
 
     <div class="section-title">
       <h2>Команда</h2>
