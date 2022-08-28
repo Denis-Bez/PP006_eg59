@@ -9,9 +9,9 @@
         <div class="carousel-indicators">
           {% for solutions in solution_menu %}
             {% if solutions.priorities == 0 %}
-              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities }}" class="active" aria-current="true" aria-label="{{ 'Slide' + solutions.priorities }}"></button>
+              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" class="active" aria-current="true" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
             {% elif solutions.priorities != 0 %}
-              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities }}" aria-label="{{ 'Slide' + solutions.priorities }}"></button>
+              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
             {% endif %}
           {% endfor %}
         </div>
@@ -20,9 +20,9 @@
         {% for solutions in solution_menu %}
           <a href="{{ url_for(solutions.url) }}" target="_blank">
             {% if solutions.priorities == 0 %}
-              <div class="carousel-item active" data-bs-interval="5000">
+              <div class="carousel-item active" data-bs-interval="3000">
             {% elif solutions.priorities != 0 %}
-              <div class="carousel-item" data-bs-interval="5000">
+              <div class="carousel-item" data-bs-interval="3000">
             {% endif %}
             {% for content in solutions['solution'] %}
               <img src=" {{ content.photo }} " class="d-block w-100" alt="...">
