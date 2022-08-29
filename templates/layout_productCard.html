@@ -1,4 +1,4 @@
-{% extends "layout_line.html" %}
+{% extends "layout_solution.html" %}
 
 
 {% block header %}
@@ -27,7 +27,7 @@
         {% endif %}
       {% endfor %}
 
-    {% elif menu.button_type == 'dropmenu' and menu.menu_name == url_name %}
+    {% elif menu.button_type == 'dropmenu' and menu.url_name == url_name %}
             
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -40,22 +40,24 @@
                 <p class="card-text">{{ product.short_discription }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a class="button" href="{{ menu.menu_name + '/' + product.url }}">Подробнее</a>
-                  </div>
-                </div>
+                    <a class="button" href="{{ menu.url_name + '/' + product.url }}">Подробнее</a>
               </div>
             </div>
           </div>
+          
+        </div>
+          
           {% endfor %}
 
+
         </div>
-      </div>
-        
+      </div>      
         
       
     {% endif %}
 
   {% endfor %}
+
 </main>
 
 {{ super() }}

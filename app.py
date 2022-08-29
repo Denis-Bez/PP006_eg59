@@ -2,7 +2,7 @@
 
 # Flask, WSGI libraries
 from flask import Flask, render_template
-from Class_SQLAlchemy import db, Menu, Solutions_menu
+from Class_SQLAlchemy import db, Menu, Solutions_menu, Product_menu
 
 # Configuratins and castom libraries
 from config import CONFIG
@@ -58,9 +58,9 @@ def product():
 # Page with infotmation about the company's completed works
 @app.route('/objects')
 def objects():
-    menu = get_all([Menu])
-    if menu:
-        return render_template('objects.html', title="Наши объекты", menu=menu)
+    content = get_all([Menu])
+    if content:
+        return render_template('objects.html', title="Наши объекты", menu=content[0])
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -68,9 +68,9 @@ def objects():
 # Page with the company's contacts
 @app.route('/contact')
 def contact():
-    menu = get_all([Menu])
-    if menu:
-        return render_template('contact.html', title="Наши объекты", menu=menu)
+    content = get_all([Menu])
+    if content:
+        return render_template('contact.html', title="Наши объекты", menu=content[0])
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -84,6 +84,13 @@ def object(object):
         return render_template('error.html', title="Ошибка")
 
 
+@app.route('/test')
+def test():
+    menu = get_all([Menu])
+    content = get_content([Product_menu])
+    return render_template('test.html', menu=menu[0], product_menu=content[0])
+
+
 # --- DATBASE CONTENT GETTING ---
 
 def get_all(tables):
@@ -95,6 +102,15 @@ def get_all(tables):
     except:
         return False
 
+
+def get_content(tables):
+    res = []
+    try:
+        for table in tables:
+            res.append(table.query.filter_by(visibility='visible', solutions_menu_id='1').order_by(table.priorities).all())
+        return res 
+    except:
+        return False
 
 # --- START SERVER ---
 if __name__ == "__main__": 

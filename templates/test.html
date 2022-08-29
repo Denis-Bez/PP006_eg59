@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block bodymain %}
+
+
+{% for menu in product_menu %}
+{% for product in menu['product'] %}
+{% if product.url == 'statcom' %}
+  {{ product.index_content|safe }}
+{% endif %}
+{% endfor %}
+{% endfor %}
+
+{% endblock %}
