@@ -3,27 +3,33 @@
 
 {% block bodymain %}
 
-<div class="container p-2 mt-3 bg-white shadow">
-  <h2>Направления деятельности</h2>
+
+
+
+<div class="container-fluid p-0">
+  
     <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          {% for solutions in solution_menu %}
-            {% if solutions.priorities == 0 %}
-              <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" class="active" aria-current="true" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
-            {% elif solutions.priorities != 0 %}
+          <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
+          {% for solutions in solution_menu %}  
               <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
-            {% endif %}
           {% endfor %}
         </div>
         <div class="carousel-inner">
-
+          
+          <a href="{{ url_for('index') }}">
+            <div class="carousel-item active" data-bs-interval="3000">
+              <img src="/static/img/bg_index.png" class="d-block w-100" alt="...">
+              <div class="carousel-caption">  
+                <h1><strong>ЭНЕРГО<span>групп</span></strong><br> Энергия в руках профессионалов</h1>
+                <p class="d-none d-md-block text-muted">Комплексное сервисное обслуживание, монтаж, наладка и проектирование электротехнического оборудования промышленных предприятий и объектов электроэнергетики по всей России.</p>
+              </div>
+            </div>
+          </a>
+        
         {% for solutions in solution_menu %}
           <a href="{{ url_for(solutions.url) }}" target="_blank">
-            {% if solutions.priorities == 0 %}
-              <div class="carousel-item active" data-bs-interval="3000">
-            {% elif solutions.priorities != 0 %}
               <div class="carousel-item" data-bs-interval="3000">
-            {% endif %}
             {% for content in solutions['solution'] %}
               <img src=" {{ content.photo }} " class="d-block w-100" alt="...">
               <div class="carousel-caption">
@@ -45,78 +51,74 @@
         </button>
     </div>
   </div>
+
 </div>
 
 
-<div class="container mt-4 py-4 bg-white shadow">
-    <div class="row">
-        <div class="col">
-
-            <h2>О компании</h2>
-            <p>Многолетний и разностороний опыт работы позволил компании ЭНЕРГОгрупп заслужить статус надежного и дисциплинированного партнера. Нашими клиентами являются крупные промышленные компании и электрогенерации.
-                Фундаментальные знания, навыки и наличие материально-технических ресурсов позволяют нам выполнять проекты любого масштаба и сложности. Выполняя свою работу, мы делаем ставку на результат и добиваемся значительного увеличения ресурсов и улучшения технико-экономичеких показателей работы электротехнического оборудования.
-                Благодаря тесному взаимодействию на всех этапах работы, мы выстраиваем тесные и прозрачные отношения с заказчиком. Доверяя нам, Вы передаете проект в руки надежных и компетентных специалистов.
-                
-                "ЭНЕРГОгрупп"- Энергия в руках профессионалов!</p>
-
-        </div>
+<div class="container-flex mx-5 about mt-4 p-4 bg-white shadow">
+  <h2>Группа компаний ЭНЕРГОgroup</h2>
+  <div class="row content">
+    <div class="col-lg-3">
+      <img src="/static/img/about_company.jpg" class="img-fluid" alt="ЭНЕРГОгрупп О компании">
     </div>
-</div>
-
-
-<!-- Сделать блок с пагинацией -->
-<div class="container mt-4 py-4 bg-white shadow">
-
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-      <div class="col">
-        <div class="card shadow-sm">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-
-          <div class="card-body">
-            <h5>Поставка STATCOM</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit modi corrupti quaerat libero vel magnam repellendus et, voluptatibus soluta unde?</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-
-          <div class="card-body">
-            <h5>Конденсаторные установки</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit modi corrupti quaerat libero vel magnam repellendus et, voluptatibus soluta unde?</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-            <img src=" {{ url_for('static', filename='img/carousel.jpg') }} " class="d-block w-100" alt="...">
-
-          <div class="card-body">
-            <h5>Фильтры гармоник</h5>
-            <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit modi corrupti quaerat libero vel magnam repellendus et, voluptatibus soluta unde?</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-lg-9 pt-4 pt-lg-0">
+      <p>
+        Многолетний и разностороний опыт работы позволил группе компаний ЭНЕРГОгрупп заслужить статус надежного и дисциплинированного партнера. Нашими клиентами являются крупные промышленные компании и электрогенерации.
+      </p>
+      <p>
+        Фундаментальные знания, навыки и наличие материально-технических ресурсов позволяют нам выполнять проекты любого масштаба и сложности. Выполняя свою работу, мы делаем ставку на результат и добиваемся значительного увеличения ресурсов и улучшения технико-экономичеких показателей работы электротехнического оборудования.
+      </p>
+      <p>
+        Благодаря тесному взаимодействию на всех этапах работы, мы выстраиваем тесные и прозрачные отношения с заказчиком. Доверяя нам, Вы передаете проект в руки надежных и компетентных специалистов.
+      </p>
+      <ul>
+        <li class="fw-bold"><i class="bi bi-activity"></i> "ЭНЕРГОгрупп"- Энергия в руках профессионалов!</li>
+      </ul>
     </div>
   </div>
+</div>
+
+
+<div class="container-flex mx-5 mt-4 p-4 bg-white shadow">
+  <h2>Наши Услуги</h2>
+  <p>
+    Группа компаний «ЭНЕРГО group» - команда профессионалов, которая предоставляет следующие виды работ электротехнического профиля для крупных промышленных предприятий:
+  </p>
+
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 py-5">
+    <div class="col d-flex align-items-start">
+      <img src="/static/img/services_icon/design.png" class='bg1 me-2 border2' alt="Проектирование">
+      <div>
+        <h4 class="fw-bold mb-0">Проектирование</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <img src="/static/img/services_icon/delivery.png" class='bg1 me-2 border2' alt="Поставка оборудования">
+      <div>
+        <h4 class="fw-bold mb-0">Поставка оборудования</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <img src="/static/img/services_icon/installation.png" class='bg1 me-2 border2' alt="Монтажные работы">
+      <div>
+        <h4 class="fw-bold mb-0">Монтажные работы</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <img src="/static/img/services_icon/repair.png" class='bg1 me-2 border2' alt="Техническое обслуживание, плановый и аварийный ремонт">
+      <div>
+        <h4 class="fw-bold mb-0">Техническое обслуживание, плановый и аварийный ремонт</h4>
+      </div>
+    </div>
+    <div class="col d-flex align-items-start">
+      <img src="/static/img/services_icon/checkup.png" class='bg1 me-2 border2' alt="Обследование и диагностика технического состояния">
+      <div>
+        <h4 class="fw-bold mb-0">Обследование и диагностика технического состояния</h4>
+      </div>
+    </div>
+  
+  </div>
+</div>
 
 
 <div class="container mt-4 py-4 bg-white shadow">
