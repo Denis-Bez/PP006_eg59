@@ -46,7 +46,6 @@
 
   
 // Gallery in Product Card
-
   /**
    * Clients Slider
    */

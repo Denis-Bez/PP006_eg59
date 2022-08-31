@@ -2,13 +2,51 @@
 
 {% block bodymain %}
 
+   <!-- ======= Menu Section ======= -->
+   <section id="menu" class="menu">
+    <div class="container" data-aos="fade-up">
 
-{% for menu in product_menu %}
-{% for product in menu['product'] %}
-{% if product.url == 'statcom' %}
-  {{ product.index_content|safe }}
-{% endif %}
-{% endfor %}
-{% endfor %}
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
+
+        <div class="tab-pane fade active show" id="menu-starters">
+
+          <div class="row gy-5">
+
+            <div class="col-lg-4 menu-item">
+              <a href="/quality/static/img/product_HVC.jpg" class="glightbox"><img src="/quality/static/img/product_HVC.jpg" class="menu-img img-fluid" alt=""></a>
+              <p class="ingredients">
+                Lorem, deren, trataro, filede, nerada
+              </p>
+            </div><!-- Menu Item -->
+
+            <div class="col-lg-4 menu-item">
+              <a href="/quality/static/img/product_HVC.jpg" class="glightbox"><img src="/quality/static/img/product_HVC.jpg" class="menu-img img-fluid" alt=""></a>
+              <p class="ingredients">
+                Lorem, deren, trataro, filede, nerada
+              </p>
+            </div><!-- Menu Item -->
+
+            <div class="col-lg-4 menu-item">
+              <a href="/quality/static/img/product_HVC.jpg" class="glightbox"><img src="/quality/static/img/product_HVC.jpg" class="menu-img img-fluid" alt=""></a>
+              <p class="ingredients">
+                Lorem, deren, trataro, filede, nerada
+              </p>
+            </div><!-- Menu Item -->
+
+          </div>
+        </div><!-- End Starter Menu Content -->
+
+
+
+      </div>
+
+    </div>
+  </section><!-- End Menu Section -->
+
+
+
+
+
+
 
 {% endblock %}

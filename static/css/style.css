@@ -4,6 +4,56 @@
   --color3: #17191F;
 }
 
+
+.container {
+  border-radius: 25px;
+}
+.container-flex {
+  border-radius: 25px;
+}
+
+.container h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.container h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--color2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.container-flex h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.container-flex h2:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--color2);
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.border2 {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--color1);
+}
 .bg1 {
   background-color: var(--color1);
 }
@@ -41,6 +91,11 @@ background-size: contain;
   box-shadow: none;
   background: var(--color2);
   color: white;
+}
+
+.navbar-main {
+  /* font-size: 1.25rem; */
+  font-weight: 600;
 }
 
 .nav-item:hover {
@@ -118,61 +173,6 @@ background-size: contain;
     background-color: #5cb874;
   }
   
-  
-/*--------------------------------------------------------------
-# Team
---------------------------------------------------------------*/
-.team .member {
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0px 0px 12px 0px rgba(34, 34, 34, 0.07);
-  padding: 30px 20px;
-  background: #fff;
-}
-
-.team .member img {
-  max-width: 60%;
-  border-radius: 50%;
-  margin: 0 0 30px 0;
-}
-
-.team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
-}
-
-.team .member span {
-  font-style: italic;
-  display: block;
-  font-size: 13px;
-}
-
-.team .member p {
-  padding-top: 10px;
-  font-size: 14px;
-  font-style: italic;
-  color: #aaaaaa;
-}
-
-.team .member .social {
-  margin-top: 15px;
-}
-
-.team .member .social a {
-  color: #919191;
-  transition: 0.3s;
-}
-
-.team .member .social a:hover {
-  color: #5cb874;
-}
-
-.team .member .social i {
-  font-size: 18px;
-  margin: 0 2px;
-}
-
 
 /*--------------------------------------------------------------
 # Product Card
@@ -293,7 +293,7 @@ background-size: contain;
   left: 0;
   top: 2px;
   font-size: 20px;
-  color: #006fbe;
+  color: var(--color1);
   line-height: 1;
 }
 
@@ -386,3 +386,41 @@ background-size: contain;
   z-index: 1;
 }
 
+
+/*--------------------------------------------------------------
+# Our Team Section
+--------------------------------------------------------------*/
+.team .member {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  overflow: hidden;
+  /* box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1); */
+}
+
+.team .member img {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 2px;
+  font-size: 20px;
+}
+
+.team .member span {
+  font-style: italic;
+  display: block;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.team .member p {
+  padding-top: 10px;
+  font-size: 14px;
+  font-style: italic;
+  color: #6c757d;
+}
