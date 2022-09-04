@@ -4,57 +4,58 @@
 {% block bodymain %}
 
 
-    
-    <section id="portfolio" class="portfolio sections-bg py-4">
-        <div class="container bg-white shadow" data-aos="fade-up">
-  
+        <div class="container-flex mx-md-5 mt-4 p-3 bg-white shadow">
           <div class="section-header">
-            <h2>Portfolio</h2>
-            <p>Quam sed id excepturi ccusantium dolorem ut quis dolores nisi llum nostrum enim velit qui ut et autem uia reprehenderit sunt deleniti</p>
+            <h2>Выполненные работы</h2>
+            <p>Реализованные проекты группы компаний ЭнергоГрупп:</p>
           </div>
-  
-          <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
-  
-            <div>
-              <ul class="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-product">Product</li>
-                <li data-filter=".filter-branding">Branding</li>
-                <li data-filter=".filter-books">Books</li>
-              </ul>
-            </div>
-  
-            <div class="row gy-4 portfolio-container">
+
+
+            <!-- <div class="row gy-4 portfolio-container">
  
               <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
                 <div class="portfolio-wrap">
-                  <img src="/static/img/carousel.jpg" class="img-fluid" alt="">
+                  <a href="/objects/cool" class="glightbox4" data-glightbox="width: 700; height: 700;"><img src="/static/img/carousel.jpg" class="img-fluid" alt=""></a>
                   <div class="portfolio-info">
-                    <h4>Remodeling 1</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a href="/objects/cool" class="glightbox4" data-glightbox="width: 700; height: 700;"><i class="bi bi-zoom-in"></i></a>
-                  </div>
-                </div>
-              </div><!-- End Portfolio Item --> 
-              
-              <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
-                <div class="portfolio-wrap">
-                  <img src="/static/img/carousel.jpg" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>Remodeling 1</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur</p>
-                    <a href="/objects/cool_again" class="glightbox4" data-glightbox="width: 700; height: 700;"><i class="bi bi-zoom-in"></i></a>
+                    <h4>Remodeling fgege rgegee egregeg egeg geg erge erge rretet 1</h4>
+                    <p>Подробнее</p>
                   </div>
                 </div>
               </div>
-  
+              
+              <div class="col-lg-4 col-md-6 portfolio-item filter-remodeling">
+                <div class="portfolio-wrap">
+                  <a href="/objects/cool_again" class="glightbox4" data-glightbox="width: 700; height: 700;"><img src="/static/img/carousel.jpg" class="img-fluid" alt=""></a>
+                  <div class="portfolio-info">
+                    <h4>Remodeling 1</h4>
+                    <p>Подробнее</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+              
+              {% for object in object_content %}
+              <div class="col">
+                <div class="card shadow-sm">
+                  <img src="{{ object.photo }}" class="img-fluid" alt="{{ object.title }}">
+                  <div class="card-body">
+                    <p class="card-text">{{ object.title }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <a href="objects/{{ object.id }}" class="glightbox4" data-glightbox="width: 700; height: 700;">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}            
+      
             </div>
-  
-          </div>
-  
         </div>
-      </section>
 
 
 

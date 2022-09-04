@@ -30,22 +30,21 @@
 
 <body class="bg-light">
 
-  <section id="topbar" class="topbar d-flex align-items-center p-1">
-    <div class="container d-flex justify-content-center justify-content-md-end">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:office@eg59.ru">office@eg59.ru</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+7 (342) 200-85-05</span></i>
-      </div>
-    </div>
-  </section>
-
-
   <header>
     
     {% block header %}
-                <nav class="navbar navbar-main navbar-expand-md d-flex align-items-center bg-white shadow"> 
-                    <a class="navbar-brand m-3" href="{{ url_for('.index') }}">
-                        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo.png" style="max-height: 60px">
+    <section id="topbar" class="topbar d-flex align-items-center p-1">
+      <div class="container d-flex justify-content-center justify-content-md-end">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:office@eg59.ru">office@eg59.ru</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span><a href="tel:+73422008505">+7 (342) 200-85-05</a></span></i>
+        </div>
+      </div>
+    </section>
+    
+                <nav class="navbar navbar-main navbar-expand-md d-flex align-items-center bg-white shadow py-0"> 
+                    <a class="navbar-brand mx-2" href="{{ url_for('.index') }}">
+                        <img src="{{ url_for('static', filename='img/logo_main.png') }}" alt="logo.png" style="max-height: 60px">
                     </a>
                     <button type="button" class="btn btn-info shadow ms-auto m-2 d-sm-flex d-md-none" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
                     <button class="navbar-toggler m-2 shadow" type="button" data-bs-toggle="collapse"
@@ -77,22 +76,29 @@
                         </ul>
                     </div>
                     <button type="button" class="btn btn-info shadow ms-auto mx-3 d-md-flex d-none align-items-center" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>
-                </nav>          
+                </nav>
+                
+                {% for category, msg in get_flashed_messages(True) %}
+                <div class="alert alert-{{category}} alert-dismissible fade show text-center m-0" role="alert">
+                  <button type="button" class="btn-close text-end" data-bs-dismiss="alert" aria-label="Close"></button>
+                  {{ msg }}
+                </div>
+                {% endfor %}
     {% endblock %}
     
       
     <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="Modal" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content text-white">
+        <div class="modal-content bgg1 text-white">
           <div class="modal-header">
-            <h5 class="modal-title" id="Modal">Оставьте заявку на экспертизу и мы с вами свяжемся</h5>
+            <h5 class="modal-title" id="Modal">Оставьте заявку и мы с вами свяжемся</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
           </div>
           <div class="modal-body">
             <div class="container">
               <div class="row">
                 <div class="col-12">
-                  <form action="#" method="post">
+                  <form action="{{ url_for('email') }}" method="post">
                     <div class="mb-3">
                       <label for="InputName1" class="form-label">Имя контактного лица</label>
                       <input type="text" name="name" class="form-control" id="InputName1" placeholder="Имя">
@@ -163,125 +169,49 @@ crossorigin="anonymous"></script>
 </body>
 
 {% block footer %}
-<div class="container-fluid px-0 bg-white">
+<div class="container-fluid px-0 pt-2 mt-4 bg-white">
 <footer class="text-center text-lg-start text-muted mt-4">
-    <!-- Section: Social media -->
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      <!-- Left -->
-      <div class="me-5 d-none d-lg-block">
-        <span>Наши социальные сети и мессенджеры:</span>
-      </div>
-      <!-- Left -->
-  
-      <!-- Right -->
-      <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div>
-      <!-- Right -->
-    </section>
-    <!-- Section: Social media -->
-  
-    <!-- Section: Links  -->
-    <section class="">
       <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
         <div class="row mt-3">
-          <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>"ЭНЕРГО Групп"
+              <img src="{{ url_for('static', filename='img/logo_main.png') }}" alt="ЭнергоГрупп логотип" style="max-height: 30px"> "ЭНЕРГО Групп"
             </h6>
-            <p>
-              Энегия в руках профессионалов
-            </p>
+            <p>Энергия в руках профессионалов!</p>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
               Направления
             </h6>
-            <p>
-              <a href="#!" class="text-reset">Качество энергии</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Электротехническая экспертиза</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Монтажные работы</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Поставка оборудования</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
+            <p><a href="{{ url_for('quality.index') }}" class="text-reset">Качество энергии</a></p>
+            <p><a href="{{ url_for('bushing.index') }}" class="text-reset">Высоковольтные Вводы</a></p>
+            <p><a href="https://eg-expert.ru" class="text-reset" target="_blank">Экзпертиза</a></p>
+          </div>        
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
               Ссылки
             </h6>
-            <p>
-              <a href="#!" class="text-reset">О Компании</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Оставить заявку</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Наши услуги</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Продукция</a>
-            </p>
+            <p><a href="{{ url_for('index') }}" class="text-reset">О Компании</a></p>
+            <p class="text-reset"><a href="#modal" data-bs-toggle="modal" data-bs-target="#modal" class="text-reset">Оставить заявку</a></p>
+            <p><a href="/static/doc/contacts.docx" class="text-reset">Карточка предприятия</a></p>
+            <p><a href="#" class="text-reset">Политика конфиденциальности</a></p>
           </div>
-          <!-- Grid column -->
-  
-          <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Контакты</h6>
-            <p><i class="fas fa-home me-3"></i> г.Пермь, ул. Героеы Хасана, 7 А, Россия</p>
+            <p><i class="bi bi-building"></i> г.Пермь, ул. Героеы Хасана, 7 А, Россия</p>
             <p>
-              <i class="fas fa-envelope me-3"></i>
-              expert@eg59.ru
+              <i class="bi bi-envelope-fill"></i>
+                office@eg59.ru
             </p>
-            <p><i class="fas fa-phone me-3"></i> +7 (342) 200-85-05</p>
-            <p><i class="fas fa-print me-3"></i> +7 912-88-97-709</p>
+            <p><i class="bi bi-telephone-inbound-fill"></i> +7 (342) 200-85-05</p>
+            <p><i class="bi bi-phone-vibrate-fill"></i> +7 912-88-97-709</p>
           </div>
-          <!-- Grid column -->
         </div>
-        <!-- Grid row -->
       </div>
-    </section>
-    <!-- Section: Links  -->
-  
-    <!-- Copyright -->
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-4 bg2 text-white">
       © 2022 Copyright:
       Общество с ограниченной ответственностью «ЭНЕРГОгрупп»
     </div>
-    <!-- Copyright -->
 </footer>
 </div>
 {% endblock %}

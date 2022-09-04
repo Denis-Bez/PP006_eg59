@@ -4,8 +4,6 @@
 {% block bodymain %}
 
 
-
-
 <div class="container-fluid p-0">
   
     <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -149,124 +147,124 @@
 </div>
 
 
-  <div class="container-flex clients mx-md-5 mt-4 p-3 bg-white shadow">
-    <div class="section-title">
-      <h2>Наши партнеры</h2>
+<div class="container-flex clients mx-md-5 mt-4 p-3 bg-white shadow">
+  <div class="section-title">
+    <h2>Наши партнеры</h2>
+  </div>
+  <div class="clients-slider swiper">
+    <div class="swiper-wrapper align-items-center">
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/interrao.png') }}" class="img-fluid" alt="ИнтерРАО"></div>
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/sibur.png') }}" class="img-fluid" alt="СИБУР"></div>
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/unipro.png') }}" class="img-fluid" alt="ЮниПро"></div>
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/uralchem.png') }}" class="img-fluid" alt="УралХим"></div>
+      <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/uralkali.png') }}" class="img-fluid" alt="УралКалий"></div>
     </div>
-    <div class="clients-slider swiper">
-      <div class="swiper-wrapper align-items-center">
-        <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/interrao.png') }}" class="img-fluid" alt="ИнтерРАО"></div>
-        <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/sibur.png') }}" class="img-fluid" alt="СИБУР"></div>
-        <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/unipro.png') }}" class="img-fluid" alt="ЮниПро"></div>
-        <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/uralchem.png') }}" class="img-fluid" alt="УралХим"></div>
-        <div class="swiper-slide"><img src="{{ url_for('static', filename='img/partners/uralkali.png') }}" class="img-fluid" alt="УралКалий"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+
+<div class="container-flex team mx-md-5 mt-4 p-3 bg-white shadow">
+    <h2>Наша команда</h2>
+    <p>Квалифицированная команда специалистов, обладающих специальными знаниями и многолетним опытом в области электроэнергетики</p>
+  <div class="row gy-4">
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex">
+      <div class="member">
+        <img src="/static/img/workers/bezvershenko.jpg" class="img-fluid" alt="Безвершенко">
+        <h4>Безвершенко Василий Сергеевич</h4>
+        <span>Директор</span>
+        <span>доб.номер: 103</span>
       </div>
-      <div class="swiper-pagination"></div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex">
+      <div class="member">
+        <img src="/static/img/workers/andreev.jpg" class="img-fluid" alt="Андреев">
+        <h4>Андреев Александр Андреевич</h4>
+        <span>Исполнительный директор</span>
+        <span>доб.номер: 102</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/volskij.jpg" class="img-fluid" alt="Вольский">
+        <h4>Вольский Владимир Львович</h4>
+        <span>Главный инженер</span>
+        <span>доб.номер: 115</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/zyryanov.jpg" class="img-fluid" alt="Зырянов">
+        <h4>Зырянов Олег Викторович</h4>
+        <span>Начальник участка</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/pyankov.jpg" class="img-fluid" alt="Пьянков">
+        <h4>Пьянков Константин Владимирович</h4>
+        <span>Зам. главного инженера по РЗиА</span>
+        <span>доб.номер: 211</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/nafigina.jpg" class="img-fluid" alt="Нафигина">
+        <h4>Нафигина Руфина Аглямовна</h4>
+        <span>Коммерческий отдел</span>
+        <span>доб.номер: 121</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/antonova.jpg" class="img-fluid" alt="Антонова">
+        <h4>Антонова Мария Рифовна</h4>
+        <span>Коммерческий отдел</span>
+        <span>доб.номер: 111</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/bosh.jpg" class="img-fluid" alt="Бош">
+        <h4>Бош Андрей Анатольевич</h4>
+        <span>Инженер по охране труда</span>
+        <span>доб.номер: 210</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/galkin.jpg" class="img-fluid" alt="Галкин">
+        <h4>Галкин Евгений Александрович</h4>
+        <span>коммерческий отдел</span>
+        <span>доб.номер: 112</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/karelina.jpg" class="img-fluid" alt="Карелина">
+        <h4>Карелина Варвара Валерьевна</h4>
+        <span>Инженер ПТО</span>
+        <span>доб.номер: 114</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/ryzhenkova.jpg" class="img-fluid" alt="Рыженкова">
+        <h4>Рыженкова Наталья Владимировна</h4>
+        <span>Инженер-сметчик</span>
+        <span>доб.номер: 109</span>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
+      <div class="member">
+        <img src="/static/img/workers/tarasenko.jpg" class="img-fluid" alt="Тарасенко">
+        <h4>Тарасенко Марина Сергеевна</h4>
+        <span>Менеджер отдела снабжения</span>
+        <span>доб.номер: 110</span>
+      </div>
     </div>
   </div>
-
-
-    <div class="container-flex team mx-md-5 mt-4 p-3 bg-white shadow">
-        <h2>Наша команда</h2>
-        <p>Квалифицированная команда специалистов, обладающих специальными знаниями и многолетним опытом в области электроэнергетики</p>
-      <div class="row gy-4">
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex">
-          <div class="member">
-            <img src="/static/img/workers/bezvershenko.jpg" class="img-fluid" alt="Безвершенко">
-            <h4>Безвершенко Василий Сергеевич</h4>
-            <span>Директор</span>
-            <span>доб.номер: 103</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex">
-          <div class="member">
-            <img src="/static/img/workers/andreev.jpg" class="img-fluid" alt="Андреев">
-            <h4>Андреев Александр Андреевич</h4>
-            <span>Исполнительный директор</span>
-            <span>доб.номер: 102</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/volskij.jpg" class="img-fluid" alt="Вольский">
-            <h4>Вольский Владимир Львович</h4>
-            <span>Главный инженер</span>
-            <span>доб.номер: 115</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/zyryanov.jpg" class="img-fluid" alt="Зырянов">
-            <h4>Зырянов Олег Викторович</h4>
-            <span>Начальник участка</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/pyankov.jpg" class="img-fluid" alt="Пьянков">
-            <h4>Пьянков Константин Владимирович</h4>
-            <span>Зам. главного инженера по РЗиА</span>
-            <span>доб.номер: 211</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/nafigina.jpg" class="img-fluid" alt="Нафигина">
-            <h4>Нафигина Руфина Аглямовна</h4>
-            <span>Коммерческий отдел</span>
-            <span>доб.номер: 121</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/antonova.jpg" class="img-fluid" alt="Антонова">
-            <h4>Антонова Мария Рифовна</h4>
-            <span>Коммерческий отдел</span>
-            <span>доб.номер: 111</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/bosh.jpg" class="img-fluid" alt="Бош">
-            <h4>Бош Андрей Анатольевич</h4>
-            <span>Инженер по охране труда</span>
-            <span>доб.номер: 210</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/galkin.jpg" class="img-fluid" alt="Галкин">
-            <h4>Галкин Евгений Александрович</h4>
-            <span>коммерческий отдел</span>
-            <span>доб.номер: 112</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/karelina.jpg" class="img-fluid" alt="Карелина">
-            <h4>Карелина Варвара Валерьевна</h4>
-            <span>Инженер ПТО</span>
-            <span>доб.номер: 114</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/ryzhenkova.jpg" class="img-fluid" alt="Рыженкова">
-            <h4>Рыженкова Наталья Владимировна</h4>
-            <span>Инженер-сметчик</span>
-            <span>доб.номер: 109</span>
-          </div>
-        </div>
-        <div class="col-xl-3 col-md-4 col-sm-6 d-flex"">
-          <div class="member">
-            <img src="/static/img/workers/tarasenko.jpg" class="img-fluid" alt="Тарасенко">
-            <h4>Тарасенко Марина Сергеевна</h4>
-            <span>Менеджер отдела снабжения</span>
-            <span>доб.номер: 110</span>
-          </div>
-        </div>
-      </div>
-    </div>
+</div>
 
 
 {% endblock %}

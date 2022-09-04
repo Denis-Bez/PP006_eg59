@@ -213,13 +213,13 @@ background-size: contain;
 }
 
 .features .nav-link:hover {
-  color: #feb900;
+  color: var(--color1);
 }
 
 .features .nav-link.active {
-  color: #feb900;
+  color: var(--color1);
   background-color: transparent;
-  border-color: #feb900;
+  border-color: var(--color1);
 }
 
 .features .tab-content {
@@ -240,7 +240,7 @@ background-size: contain;
   display: block;
   width: 60px;
   height: 3px;
-  background: #feb900;
+  background: var(--color1);
   left: 0;
   bottom: 0;
 }
@@ -257,7 +257,7 @@ background-size: contain;
 .features .tab-pane ul i {
   font-size: 20px;
   padding-right: 4px;
-  color: #feb900;
+  color: var(--color1);
 }
 
 .features .tab-pane p:last-child {
