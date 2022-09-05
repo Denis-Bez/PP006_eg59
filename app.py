@@ -3,7 +3,7 @@
 # Flask, WSGI libraries
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
-from Class_SQLAlchemy import Object, db, Menu, Solutions_menu, Product_menu
+from Class_SQLAlchemy import Object, db, Menu, Solutions_menu, Product_menu, SEO
 
 # Configuratins and castom libraries
 from config import CONFIG
@@ -13,41 +13,42 @@ from Quality.quality import quality
 from Bushing.bushing import bushing
 
 # --- CONFIGURATION BLOCK ---
-app = Flask (__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///content.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+application = Flask (__name__)
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///content.db'
+application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-app.config["SECRET_KEY"] = CONFIG["SECRET_KEY"]
-app.config["MAIL_DEFAULT_SENDER"] = CONFIG["MAIL_DEFAULT_SENDER"]
-app.config["MAIL_PASSWORD"] = CONFIG["MAIL_PASSWORD"]
-app.config["MAIL_PORT"] = 465
-app.config["MAIL_SERVER"] = "mail.eg-expert.ru"
-app.config["MAIL_USE_TLS"] = False
-app.config["MAIL_USE_SSL"] = True
-app.config["MAIL_USERNAME"] = CONFIG["MAIL_USERNAME"]
-mail = Mail(app)
+application.config["SECRET_KEY"] = CONFIG["SECRET_KEY"]
+application.config["MAIL_DEFAULT_SENDER"] = CONFIG["MAIL_DEFAULT_SENDER"]
+application.config["MAIL_PASSWORD"] = CONFIG["MAIL_PASSWORD"]
+application.config["MAIL_PORT"] = 465
+application.config["MAIL_SERVER"] = "mail.eg-expert.ru"
+application.config["MAIL_USE_TLS"] = False
+application.config["MAIL_USE_SSL"] = True
+application.config["MAIL_USERNAME"] = CONFIG["MAIL_USERNAME"]
+mail = Mail(application)
 
-db.init_app(app)
+db.init_app(application)
 
-app.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power quality" business line
-app.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "Transformer " business line
+application.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power quality" business line
+application.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "Transformer " business line
 
 
 # --- HEANDLERS BLOCK ---
 # Need to delete so many heandlers and do it dynamic generated. Remember DRY!
 
 
-@app.route('/')
+@application.route('/')
 def index():
         content = get_all([Menu, Solutions_menu])
-        if content:
-            return render_template('index.html', title="Главная страница", menu=content[0], solution_menu=content[1])
+        seo = get_seo()
+        if content and seo:
+            return render_template('index.html', seo=seo, menu=content[0], solution_menu=content[1], url_name='')
         else:
             return render_template('error.html', title="Ошибка")
 
 
 # Page with List of business activities
-@app.route('/solutions')
+@application.route('/solutions')
 def solutions():
     menu = get_all([Menu])
     if menu:
@@ -57,7 +58,7 @@ def solutions():
 
 
 # Page with company's products
-@app.route('/product')
+@application.route('/product')
 def product():
     menu = get_all([Menu])
     if menu:
@@ -67,7 +68,7 @@ def product():
 
 
 # Page with infotmation about the company's completed works
-@app.route('/objects')
+@application.route('/objects')
 def objects():
     content = get_all([Menu, Object])
     if content:
@@ -76,7 +77,7 @@ def objects():
         return render_template('error.html', title="Ошибка")
 
 
-@app.route('/objects/<int:object>')
+@application.route('/objects/<int:object>')
 def object(object):
     content = get_all([Menu, Object])
     if content:
@@ -86,7 +87,7 @@ def object(object):
 
 
 # Page with the company's contacts
-@app.route('/contact')
+@application.route('/contact')
 def contact():
     content = get_all([Menu])
     if content:
@@ -95,7 +96,7 @@ def contact():
         return render_template('error.html', title="Ошибка")
 
 
-@app.route("/email", methods=["POST", "GET"])
+@application.route("/email", methods=["POST", "GET"])
 def email():
 
     if request.method == "POST":
@@ -126,11 +127,10 @@ def email():
     return redirect ("/")
 
 
-@app.route('/test')
+@application.route('/test')
 def test():
     menu = get_all([Menu])
-    content = get_content([Product_menu])
-    return render_template('test.html', menu=menu[0], product_menu=content[0])
+    return render_template('test.html', menu=menu[0])
 
 
 # --- DATBASE CONTENT GETTING ---
@@ -145,19 +145,18 @@ def get_all(tables):
         return False
 
 
-def get_content(tables):
-    res = []
+def get_seo():
     try:
-        for table in tables:
-            res.append(table.query.filter_by(visibility='visible', solutions_menu_id='1').order_by(table.priorities).all())
+        res = SEO.query.all()
         return res 
     except:
         return False
 
+
 # --- START SERVER ---
 if __name__ == "__main__": 
     # db.create_all() # Uncomment For creating new tables
-    app.run(debug=True)
+    application.run(debug=True)
     
     
     

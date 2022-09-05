@@ -11,11 +11,12 @@
 {% block bodymain %}
 
 
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-white shadow rounded">
-
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-white shadow rounded about">
+<div class="container-flex p-3">
+    <div class="row content">
     {{ solutions.index_content|safe }}
-
-
+    </div>
+</div>
 </main>
 
         {{ super() }}

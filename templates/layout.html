@@ -18,10 +18,10 @@
         
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     
-    {% for s in seo %}
-      {% if s.note == url_name %}
-      <title>{{ s.title }}</title>
-      <meta name="description" content="{{ s.discription }}"/>
+    {% for meta in seo %}
+      {% if meta.url_name == url_name %}
+      <title>{{ meta.title }}</title>
+      <meta name="description" content="{{ meta.discription }}"/>
       {% endif %}
     {% endfor %}
 
@@ -33,7 +33,10 @@
   <header>
     
     {% block header %}
-    <section id="topbar" class="topbar d-flex align-items-center p-1">
+    <section id="topbar" class="topbar d-flex align-items-center justify-content-center p-1">
+      <div class="contact-info align-items-start d-md-flex d-none p-1">
+        <h2>ЭНЕРГОgroup</h2>
+      </div>
       <div class="container d-flex justify-content-center justify-content-md-end">
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:office@eg59.ru">office@eg59.ru</a></i>
@@ -65,6 +68,11 @@
                                           {% for drop in item[item.url_name] %}
                                             <li><a class="dropdown-item" href={{ url_for(drop.url, product=drop.url_name) }}> {{ drop.title }} </a></li>
                                           {% endfor %}
+                                          {% if item.url == 'solutions' %}
+                                          <li>
+                                            <a class="dropdown-item" href="https://eg-expert.ru/" target="_blank">Электротехническая экспертиза</a>
+                                          </li>
+                                          {% endif %}
                                       </ul>    
                                   </li>
                               {% else %}

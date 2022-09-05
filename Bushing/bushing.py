@@ -1,23 +1,25 @@
 from flask import Blueprint, render_template
-from Class_SQLAlchemy import db, Product_menu
+from Class_SQLAlchemy import db, Menu, Product_menu, Solution, SEO
 
 bushing = Blueprint('bushing', __name__, template_folder='templates', static_folder='static')
 
 
 @bushing.route('/')
 def index():
-    menu = get_menu()
-    if menu:
-        return render_template('index.html', title='Главная качество энергии', menu=menu)
+    content = get_content()
+    if content:
+        return render_template('layout_indexSolutions.html', title='Главная качество энергии', menu=content[0], product_menu=content[1], solutions=content[2])
     else:
         return render_template('error.html', title="Ошибка")
 
 
 # --- DATBASE CONTENT GETTING ---
-
-def get_menu():
+def get_content():
     try:
-        res = Product_menu.query.filter_by(visibility='visible', solutions_menu_id='2').order_by(Product_menu.priorities).all()
-        return res
+        query_1 = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
+        query_2 = Product_menu.query.filter_by(visibility='visible', solutions_menu_id='2').order_by(Product_menu.priorities).all()
+        query_3 = Solution.query.filter_by(visibility='visible', solutions_menu_id='2').first()
+        query_4 = SEO.query.filter_by(solutions_menu_id='1').all()
+        return [query_1, query_2, query_3, query_4]
     except:
         return False
