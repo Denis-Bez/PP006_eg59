@@ -6,23 +6,24 @@
 
 <div class="container-fluid p-0">
   
-    <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 0"></button>
           {% for solutions in solution_menu %}  
               <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
           {% endfor %}
         </div>
-        <div class="carousel-inner">
-          
+        <div class="carousel-inner">    
           <a href="{{ url_for('index') }}">
+            
             <div class="carousel-item active" data-bs-interval="3000">
               <img src="/static/img/bg_index.png" class="d-block w-100" alt="...">
-              <div class="carousel-caption">  
+              <div class="carousel-caption">
                 <h1><strong>ЭНЕРГО<span>групп</span></strong><br> Энергия в руках профессионалов</h1>
-                <p class="d-none d-md-block text-muted">Комплексное сервисное обслуживание, монтаж, наладка и проектирование электротехнического оборудования промышленных предприятий и объектов электроэнергетики по всей России.</p>
+                <p class="d-none d-md-block">Комплексное сервисное обслуживание, монтаж, наладка и проектирование электротехнического оборудования промышленных предприятий и объектов электроэнергетики по всей России.</p>
               </div>
             </div>
+
           </a>
         
         {% for solutions in solution_menu %}
@@ -31,8 +32,8 @@
             {% for content in solutions['solution'] %}
               <img src=" {{ content.photo }} " class="d-block w-100" alt="...">
               <div class="carousel-caption">
-                <h5>{{ content.title }}</h5>
-                <p class="d-none d-md-block">{{ content.short_discription }}</p>
+                <h1>{{ content.title }}</h1>
+                <h2 class="d-none d-md-block">{{ content.short_discription }}</h2>
               </div>
             {% endfor %}
         </div>

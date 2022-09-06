@@ -13,6 +13,23 @@ def index():
         return render_template('error.html', title="Ошибка")
 
 
+@bushing.route('/<product>')
+def productCard(product):
+    content = get_content()
+    if content:
+        return render_template('layout_productCard.html', menu=content[0], product_menu=content[1], url_name=product)
+    else:
+        return render_template('error.html')
+
+
+@bushing.route('<products>/<product>')
+def productCards(products, product):
+    content = get_content()
+    if content:
+        return render_template('layout_productCard.html', menu=content[0], product_menu=content[1], single_product=True, url_name=product)
+    else:
+        return render_template('error.html')
+
 # --- DATBASE CONTENT GETTING ---
 def get_content():
     try:
