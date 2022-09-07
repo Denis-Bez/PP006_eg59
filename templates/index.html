@@ -12,6 +12,7 @@
           {% for solutions in solution_menu %}  
               <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="{{ solutions.priorities|string }}" aria-label="{{ 'Slide' + solutions.priorities|string }}"></button>
           {% endfor %}
+          <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="3" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">    
           <a href="{{ url_for('index') }}">
@@ -39,6 +40,16 @@
         </div>
         </a>
         {% endfor %}
+
+        <a href="" target="_blank">
+          <div class="carousel-item" data-bs-interval="3000">
+          <img src="/static/img/expert_carusel.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption">
+            <h1>Электротехническая экспертиза</h1>
+            <h2 class="d-none d-md-block">Проведение судебных и досудебных экспертиз</h2>
+          </div>
+        </div>
+        </a>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -132,15 +143,9 @@
                     </p>                    
                   </div>
                   <div class="col-lg-4 col-md-6 menu-item">
-                    <a href="/static/img/company_doc/company_card.jpg" class="glightbox"><img src="/static/img/company_doc/company_card_min.jpg" class="menu-img img-fluid" alt=""></a>
+                    <a href="/static/img/company_doc/quality_sertificat.jpg" class="glightbox"><img src="/static/img/company_doc/quality_sertificat_min.jpg" class="menu-img img-fluid" alt=""></a>
                     <p class="ingredients">
-                      Карточка предприятия
-                    </p>
-                  </div>
-                  <div class="col-lg-4 col-md-6 menu-item">
-                    <a href="/static/img/company_doc/company_card.jpg" class="glightbox"><img src="/static/img/company_doc/company_card_min.jpg" class="menu-img img-fluid" alt=""></a>
-                    <p class="ingredients">
-                      Карточка предприятия
+                      Сертифкат соответствия Качество энергии
                     </p>
                   </div>
                 </div>
