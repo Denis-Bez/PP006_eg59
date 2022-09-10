@@ -1,4 +1,5 @@
 # Other libraries
+import re
 
 # Flask, WSGI libraries
 from flask import Flask, render_template, request, redirect, flash
@@ -7,6 +8,7 @@ from Class_SQLAlchemy import Object, db, Menu, Solutions_menu, Product_menu, SEO
 
 # Configuratins and castom libraries
 from config import CONFIG
+from spam_list import spam_filter
 
 # # Blueprint block
 from Quality.quality import quality
@@ -107,7 +109,21 @@ def email():
 
         msg = Message("Заявка на экспертизу", recipients=["v417459@yandex.ru"])
         msg_client = Message("Заявка успешно отправлена", recipients=[email])
-        msg_client.body = (f"Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации")
+        msg_client.body = ("Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации")
+
+        
+        # Spam filter
+        try:
+            for spam_text in spam_filter["text"]:
+                if re.search(spam_text, text):
+                    flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
+                    return redirect ("/")
+        except:
+            msg_error = Message("Ошибка на сайте eg59.ru", recipients=["v417459@yandex.ru"])
+            msg_error.body = ("Ошибка при работе спам-фильтра")
+            mail.send(msg_error)
+            print("text: 'None'")
+
 
         # Sending mail
         try:
