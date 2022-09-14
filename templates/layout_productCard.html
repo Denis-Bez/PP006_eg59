@@ -33,17 +33,19 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           
           {% for product in menu['product'] %}
+          
           <div class="col">
             <div class="card shadow-sm p-1">
-              {{ product.photo|safe }}
+              <a href="{{ menu.url_name + '/' + product.url }}">{{ product.photo|safe }}</a>
               <div class="card-body">
-                <p class="card-text p-1">{{ product.short_discription }}</p>
+                <p class="card-text p-1">{{ product.short_discription|safe }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a class="button p-1" href="{{ menu.url_name + '/' + product.url }}">Подробнее</a>
               </div>
             </div>
           </div>
+        
           
         </div>
       </div>

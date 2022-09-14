@@ -2,6 +2,7 @@
   --color1: #4283ae;
   --color2: #333750;
   --color3: #17191F;
+  --color-sanhe: #F69140;
 }
 
 
@@ -47,6 +48,14 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.text-color2 {
+  color: var(--color2);
+}
+
+.text-color-sanhe {
+  color: var(--color-sanhe);
 }
 
 .border2 {

@@ -7,8 +7,9 @@ quality = Blueprint('quality', __name__, template_folder='templates', static_fol
 @quality.route('/')
 def index():
     menu = get_menu()
+    seo = get_seo('quality')
     if menu:
-        return render_template('layout_indexSolutions.html', title='Главная качество энергии', menu=menu[0], product_menu=menu[1], solutions=menu[2])
+        return render_template('layout_indexSolutions.html', seo=seo, menu=menu[0], product_menu=menu[1], solutions=menu[2])
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -32,8 +33,9 @@ def contact():
 @quality.route('/<product>')
 def productCard(product):
     menu = get_menu()
+    seo = get_seo(product)
     if menu:
-        return render_template('layout_productCard.html', menu=menu[0], product_menu=menu[1], url_name=product)
+        return render_template('layout_productCard.html', menu=menu[0], product_menu=menu[1], seo=seo, url_name=product)
     else:
         return render_template('error.html')
 
@@ -41,8 +43,9 @@ def productCard(product):
 @quality.route('<products>/<product>')
 def productCards(products, product):
     menu = get_menu()
+    seo = get_seo(product)
     if menu:
-        return render_template('layout_productCard.html', menu=menu[0], product_menu=menu[1], seo=menu[3], single_product=True, url_name=product)
+        return render_template('layout_productCard.html', menu=menu[0], product_menu=menu[1], seo=seo, single_product=True, url_name=product)
     else:
         return render_template('error.html')
 
@@ -53,7 +56,13 @@ def get_menu():
         query_1 = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
         query_2 = Product_menu.query.filter_by(visibility='visible', solutions_menu_id='1').order_by(Product_menu.priorities).all()
         query_3 = Solution.query.filter_by(visibility='visible', solutions_menu_id='1').first()
-        query_4 = SEO.query.filter_by(solutions_menu_id='1').all()
-        return [query_1, query_2, query_3, query_4]
+        return [query_1, query_2, query_3]
+    except:
+        return False
+
+def get_seo(url_name):
+    try:
+        res = SEO.query.filter_by(url_name=url_name).first()
+        return res 
     except:
         return False

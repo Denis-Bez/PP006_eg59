@@ -18,12 +18,9 @@
         
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
     
-    {% for meta in seo %}
-      {% if meta.url_name == url_name %}
-      <title>{{ meta.title }}</title>
-      <meta name="description" content="{{ meta.discription }}"/>
-      {% endif %}
-    {% endfor %}
+    
+      <title>{{ seo.title }}</title>
+      <meta name="description" content="{{ seo.discription }}"/>
 
 </head>
 
@@ -35,7 +32,7 @@
     {% block header %}
     <section id="topbar" class="topbar d-flex align-items-center justify-content-center p-1">
       <div class="contact-info align-items-start d-md-flex d-none p-1">
-        <h2>ЭНЕРГОgroup</h2>
+        <a class="navbar-brand" href="{{ url_for('index') }}"><h2>ЭНЕРГОgroup</h2></a>
       </div>
       <div class="container d-flex justify-content-center justify-content-md-end">
         <div class="contact-info d-flex align-items-center">
@@ -46,7 +43,7 @@
     </section>
     
                 <nav class="navbar navbar-main navbar-expand-md d-flex align-items-center bg-white shadow py-0"> 
-                    <a class="navbar-brand mx-2" href="{{ url_for('.index') }}">
+                    <a class="navbar-brand mx-2" href="{{ url_for('index') }}">
                         <img src="{{ url_for('static', filename='img/logo_main.png') }}" alt="logo.png" style="max-height: 60px">
                     </a>
                     <button type="button" class="btn btn-info shadow ms-auto m-2 d-sm-flex d-md-none" data-bs-toggle="modal" data-bs-target="#modal">Оставить заявку</button>

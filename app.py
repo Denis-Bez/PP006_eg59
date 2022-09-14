@@ -42,9 +42,9 @@ application.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "T
 @application.route('/')
 def index():
         content = get_all([Menu, Solutions_menu])
-        seo = get_seo()
+        seo = get_seo('')
         if content and seo:
-            return render_template('index.html', seo=seo, menu=content[0], solution_menu=content[1], url_name='')
+            return render_template('index.html', seo=seo, menu=content[0], solution_menu=content[1])
         else:
             return render_template('error.html', title="Ошибка")
 
@@ -102,16 +102,15 @@ def contact():
 def email():
 
     if request.method == "POST":
+        # Getting client's date from form
         name = request.form.get("name")
         phone = request.form.get("phone")
         email = request.form.get("email")
         text = request.form.get("text")
-
+        # Create text for sending message
         msg = Message("Заявка на экспертизу", recipients=["v417459@yandex.ru"])
         msg_client = Message("Заявка успешно отправлена", recipients=[email])
-        msg_client.body = ("Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации")
-
-        
+        msg_client.body = ("Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации") 
         # Spam filter
         try:
             for spam_text in spam_filter["text"]:
@@ -123,23 +122,18 @@ def email():
             msg_error.body = ("Ошибка при работе спам-фильтра")
             mail.send(msg_error)
             print("text: 'None'")
-
-
         # Sending mail
         try:
             mail.send(msg_client)
             status = "Подтверждение на почту отправлено"
         except:
             status = "Подтверждение на почту не отправлено"
-
-        msg.body = (f"Имя клиента: {name}\nТелефон клиента: {phone}\nEmail заявки: {email}\nТекст заявки: {text}\nСтатус отправки письма клиенту: {status}")
-        
+        msg.body = (f"Имя клиента: {name}\nТелефон клиента: {phone}\nEmail заявки: {email}\nТекст заявки: {text}\nСтатус отправки письма клиенту: {status}")      
         try:
             mail.send(msg)
             flash("Заявка успешно отправлена! Мы свяжемся с Вами в ближайшее время", category="success")
         except:
-            flash("Произошла ошибка при отправке заявки. Попробуйте написать нам на почту expert@eg59.ru или позвонить по телефону +7 912-88-97-709", category="danger")
-        
+            flash("Произошла ошибка при отправке заявки. Попробуйте написать нам на почту expert@eg59.ru или позвонить по телефону +7 912-88-97-709", category="danger")        
     return redirect ("/")
 
 
@@ -161,9 +155,9 @@ def get_all(tables):
         return False
 
 
-def get_seo():
+def get_seo(url_name):
     try:
-        res = SEO.query.all()
+        res = SEO.query.filter_by(url_name=url_name).first()
         return res 
     except:
         return False
@@ -171,7 +165,6 @@ def get_seo():
 
 # --- START SERVER ---
 if __name__ == "__main__": 
-    # db.create_all() # Uncomment For creating new tables
     application.run(debug=True)
     
     
