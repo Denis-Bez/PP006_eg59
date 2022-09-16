@@ -73,8 +73,9 @@ def product():
 @application.route('/objects')
 def objects():
     content = get_all([Menu, Object])
+    seo = get_seo('objects')
     if content:
-        return render_template('objects.html', title="Наши объекты", menu=content[0], object_content=content[1])
+        return render_template('objects.html', seo=seo, menu=content[0], object_content=content[1])
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -82,8 +83,9 @@ def objects():
 @application.route('/objects/<int:object>')
 def object(object):
     content = get_all([Menu, Object])
+    seo = get_seo('object')
     if content:
-        return render_template('layout_object.html', menu=content[0], object_content=content[1], object=object)
+        return render_template('layout_object.html', seo=seo, menu=content[0], object_content=content[1], object=object)
     else:
         return render_template('error.html', title="Ошибка")
 
@@ -92,8 +94,9 @@ def object(object):
 @application.route('/contact')
 def contact():
     content = get_all([Menu])
+    seo = get_seo('object')
     if content:
-        return render_template('contact.html', title="Наши объекты", menu=content[0])
+        return render_template('contact.html', seo=seo, menu=content[0])
     else:
         return render_template('error.html', title="Ошибка")
 

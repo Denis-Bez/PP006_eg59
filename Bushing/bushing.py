@@ -7,8 +7,9 @@ bushing = Blueprint('bushing', __name__, template_folder='templates', static_fol
 @bushing.route('/')
 def index():
     content = get_content()
+    seo = get_seo("bushing")
     if content:
-        return render_template('layout_indexSolutions.html', title='Главная качество энергии', menu=content[0], product_menu=content[1], solutions=content[2])
+        return render_template('layout_indexSolutions.html', seo=seo, menu=content[0], product_menu=content[1], solutions=content[2])
     else:
         return render_template('error.html', title="Ошибка")
 
