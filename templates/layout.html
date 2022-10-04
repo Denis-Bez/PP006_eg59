@@ -29,12 +29,12 @@
   <header>
     
     {% block header %}
-    <section id="topbar" class="topbar d-flex align-items-center justify-content-center p-1">
+    <section id="topbar" class="topbar d-flex align-items-center justify-content-md-between justify-content-center px-md-3 px-0">
       <div class="contact-info align-items-start d-md-flex d-none p-1">
         <a class="navbar-brand" href="{{ url_for('index') }}"><h2>ЭНЕРГОgroup</h2></a>
       </div>
-      <div class="container d-flex justify-content-center justify-content-md-end">
-        <div class="contact-info d-flex align-items-center">
+      <div class="container-flex d-flex">
+        <div class="contact-info d-flex">
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:office@eg59.ru">office@eg59.ru</a></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span><a href="tel:+73422008505">+7 (342) 200-85-05</a></span></i>
         </div>
@@ -143,7 +143,7 @@
       </div>
     </div>
     
-    </header>
+  </header>
 
 
     {% block bodynav %}
@@ -202,13 +202,12 @@ crossorigin="anonymous"></script>
           </div>
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 class="text-uppercase fw-bold mb-4">Контакты</h6>
-            <p><i class="bi bi-building"></i> г.Пермь, ул. Героеы Хасана, 7 А, Россия</p>
+            <p><i class="bi bi-building"></i> г.Пермь, ул. Героев Хасана, 7 А, Россия</p>
             <p>
               <i class="bi bi-envelope-fill"></i>
                 office@eg59.ru
             </p>
             <p><i class="bi bi-telephone-inbound-fill"></i> +7 (342) 200-85-05</p>
-            <p><i class="bi bi-phone-vibrate-fill"></i> +7 912-88-97-709</p>
           </div>
         </div>
       </div>

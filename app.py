@@ -140,12 +140,6 @@ def email():
     return redirect ("/")
 
 
-@application.route('/test')
-def test():
-    menu = get_all([Menu])
-    return render_template('test.html', menu=menu[0])
-
-
 # --- DATBASE CONTENT GETTING ---
 
 def get_all(tables):
@@ -168,7 +162,7 @@ def get_seo(url_name):
 
 # --- START SERVER ---
 if __name__ == "__main__": 
-    application.run(debug=True)
+    application.run(debug=False)
     
     
     

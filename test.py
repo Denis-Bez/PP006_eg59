@@ -1,8 +1,13 @@
+from spam_list import spam_filter
 
+import re
 
 def start():
-    a = "'quality.productCard', name='statcom'"
-    print(a.strip())
+    text = "Zimerlfe"
+    for spam_text in spam_filter:
+        print(spam_text)
+        # if re.search(spam_text, text):
+        #     print("Searched!")
 
 
 if __name__ == "__main__":
