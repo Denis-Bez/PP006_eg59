@@ -101,6 +101,28 @@ def contact():
         return render_template('error.html', title="Ошибка")
 
 
+# Page with company's certificates
+@application.route('/certificates')
+def certificates():
+    content = get_all([Menu])
+    seo = get_seo('certificates')
+    if content:
+        return render_template('certificates.html', seo=seo, menu=content[0])
+    else:
+        return render_template('error.html', title="Ошибка")
+
+
+# Privacy policy
+@application.route('/privacy')
+def privacy():
+    content = get_all([Menu])
+    seo = get_seo('privacy')
+    if content:
+        return render_template('privacy.html', seo=seo, menu=content[0])
+    else:
+        return render_template('error.html', title="Ошибка")
+
+
 @application.route("/email", methods=["POST", "GET"])
 def email():
 
@@ -141,7 +163,6 @@ def email():
 
 
 # --- DATBASE CONTENT GETTING ---
-
 def get_all(tables):
     res = []
     try:

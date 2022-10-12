@@ -197,8 +197,9 @@ crossorigin="anonymous"></script>
             </h6>
             <p><a href="{{ url_for('index') }}" class="text-reset">О Компании</a></p>
             <p class="text-reset"><a href="#modal" data-bs-toggle="modal" data-bs-target="#modal" class="text-reset">Оставить заявку</a></p>
+            <p><a href="{{ url_for('certificates') }}" class="text-reset">Лицензии и сертификаты</a></p>
             <p><a href="/static/doc/contacts.docx" class="text-reset">Карточка предприятия</a></p>
-            <p><a href="#" class="text-reset">Политика конфиденциальности</a></p>
+            <p><a href="{{ url_for('privacy') }}" class="text-reset">Политика конфиденциальности</a></p>
           </div>
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <h6 class="text-uppercase fw-bold mb-4">Контакты</h6>
