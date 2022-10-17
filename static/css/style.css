@@ -5,6 +5,10 @@
   --color-sanhe: #F69140;
 }
 
+.navbar-nav {
+  font-size: 19px;
+  font-weight: 700;
+}
 
 .container {
   border-radius: 25px;
