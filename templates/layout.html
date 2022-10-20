@@ -40,7 +40,6 @@
         </div>
       </div>
     </section>
-    
                 <nav class="navbar navbar-main navbar-expand-md d-flex align-items-center bg-white shadow py-0"> 
                     <a class="navbar-brand mx-2" href="{{ url_for('index') }}">
                         <img src="{{ url_for('static', filename='img/logo_main.png') }}" alt="logo.png" style="max-height: 60px">
@@ -67,6 +66,9 @@
                                           {% if item.url == 'solutions' %}
                                           <li>
                                             <a class="dropdown-item" href="https://eg-expert.ru/" target="_blank">Электротехническая экспертиза</a>
+                                          </li>
+                                          <li>
+                                            <a class="dropdown-item" href="https://worldcadabra.com/" target="_blank">Разработка программного обеспечения</a>
                                           </li>
                                           {% endif %}
                                       </ul>    
