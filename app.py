@@ -133,7 +133,7 @@ def email():
         email = request.form.get("email")
         text = request.form.get("text")
         # Create text for sending message
-        msg = Message("Заявка на экспертизу", recipients=["v417459@yandex.ru"])
+        msg = Message("Заявка c сайта eg59.ru", recipients=["v417459@yandex.ru"])
         msg_client = Message("Заявка успешно отправлена", recipients=[email])
         msg_client.body = ("Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации") 
         # Spam filter
