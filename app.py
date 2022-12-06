@@ -138,15 +138,25 @@ def email():
         msg_client.body = ("Мы получили заявку на экспертизу. Свяжемся с вами в ближайшее время для уточнения информации") 
         # Spam filter
         try:
+            if not text:
+                flash("Ошибка поле 'Текст заявки' не должно быть пустым! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
+                return redirect ("/")
             for spam_text in spam_filter["text"]:
                 if re.search(spam_text, text):
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                     return redirect ("/")
-        except:
+            for spam_text in spam_filter["name"]:
+                print(spam_text)
+                if re.search(spam_text, name):
+                    flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
+                    return redirect ("/")
+        except Exception as e:
             msg_error = Message("Ошибка на сайте eg59.ru", recipients=["v417459@yandex.ru"])
             msg_error.body = ("Ошибка при работе спам-фильтра")
+            flash("Ошибка при отправке заявки! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
             mail.send(msg_error)
-            print("text: 'None'")
+            print(f"Error: {e}")
+            return redirect ("/")
         # Sending mail
         try:
             mail.send(msg_client)
@@ -183,7 +193,7 @@ def get_seo(url_name):
 
 # --- START SERVER ---
 if __name__ == "__main__": 
-    application.run(debug=False)
+    application.run(debug=True)
     
     
     
