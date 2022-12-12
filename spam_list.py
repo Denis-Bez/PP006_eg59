@@ -1,11 +1,11 @@
 # Спам фильтр при отправке заявок
 # Проверку спам фильтра можно провести с помощью метода пересечения множеств (нужна сортировка)
 spam_filter = {
-    'name': ['Zimer', 'RobertLot', 'https', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa'],
+    'name': ['Zimer', 'RobertLot', 'https', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot'],
     'phone': [],
     'email': [],
     'text': ['ОЗОН.ру', 'Wildberries.ру', 'nуmрhоmaniа', 'нимфoманией', 'биceкcyальнa', 'любoвью', 'наркомании', 
     'Представьте, что Ваше коммерческое предложение', 'аутистам, онкобольным', '<a href=', 'porn',
-    '\[url=', 'https://', 'http://', 'порно', '/кролика', 'Букмекеры'
+    '\[url=', 'https://', 'http://', 'порно', '/кролика', 'Букмекеры', '.buzz', 'SEO продвижение'
     ]
 }

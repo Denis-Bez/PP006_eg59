@@ -94,7 +94,7 @@ def object(object):
 @application.route('/contact')
 def contact():
     content = get_all([Menu])
-    seo = get_seo('object')
+    seo = get_seo('contact')
     if content:
         return render_template('contact.html', seo=seo, menu=content[0])
     else:
