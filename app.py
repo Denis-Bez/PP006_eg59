@@ -141,6 +141,9 @@ def email():
             if not text:
                 flash("Ошибка поле 'Текст заявки' не должно быть пустым! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                 return redirect ("/")
+            if text == '_':
+                flash("Ошибка поле 'Текст заявки' не должно быть пустым! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
+                return redirect ("/")
             for spam_text in spam_filter["text"]:
                 if re.search(spam_text, text):
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
