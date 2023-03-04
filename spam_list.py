@@ -2,7 +2,7 @@
 # Проверку спам фильтра можно провести с помощью метода пересечения множеств (нужна сортировка)
 spam_filter = {
     'name': ['Zimer', 'RobertLot', 'https', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
-            'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap'
+            'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb'
             ],
     'phone': [],
     'email': [],
