@@ -5,7 +5,7 @@ spam_filter = {
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg'
             ],
     'phone': [],
-    'email': [],
+    'email': ['jenay454'],
     'text': ['ОЗОН.ру', 'Wildberries.ру', 'nуmрhоmaniа', 'нимфoманией', 'биceкcyальнa', 'любoвью', 'наркомании', 
     'Представьте, что Ваше коммерческое предложение', 'аутистам, онкобольным', '<a href=', 'porn',
     '\[url=', 'https://', 'http://', 'Http:', 'порно', '/кролика', 'Букмекеры', '.buzz', 'SEO продвижение', 'базы директоров', 
