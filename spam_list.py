@@ -3,7 +3,7 @@
 spam_filter = {
     'name': ['Zimer', 'RobertLot', 'https', 'http', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
-            'Alexandratib', 
+            'Alexandratib', 'Sergio', 'Alexandratib'
             ],
     'phone': [],
     'email': ['jenay454', 'kautksuhsk'],
