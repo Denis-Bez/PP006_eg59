@@ -7,7 +7,7 @@ spam_filter = {
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria'
             ],
     'phone': [],
-    'email': ['jenay454', 'kautksuhsk'],
+    'email': ['jenay454', 'kautksuhsk', 'generic'],
     'text': ['ОЗОН.ру', 'Wildberries.ру', 'nуmрhоmaniа', 'нимфoманией', 'биceкcyальнa', 'любoвью', 'наркомании', 
     'Представьте, что Ваше коммерческое предложение', 'аутистам, онкобольным', '<a href=', 'porn',
     '\[url=', 'https://', 'http://', 'Http:', 'порно', '/кролика', 'Букмекеры', '.buzz', 'SEO продвижение', 'базы директоров', 
