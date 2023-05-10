@@ -14,6 +14,7 @@ from spam_list import spam_filter
 # # Blueprint block
 from Quality.quality import quality
 from Bushing.bushing import bushing
+from Own.own import own
 
 # --- CONFIGURATION BLOCK ---
 application = Flask (__name__)
@@ -39,6 +40,7 @@ db.init_app(application)
 
 application.register_blueprint(quality, url_prefix='/quality') # A Subsite of "Power quality" business line
 application.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "Transformer " business line
+application.register_blueprint(own, url_prefix='/own') # A Subsite of "Own products " business line
 
 
 # --- HEANDLERS BLOCK ---
@@ -49,6 +51,8 @@ application.register_blueprint(bushing, url_prefix='/bushing') # A Subsite of "T
 def index():
         content = get_all([Menu, Solutions_menu])
         seo = get_seo('')
+        for i in content[1]:
+            print(i.title)
         if content and seo:
             return render_template('index.html', seo=seo, menu=content[0], solution_menu=content[1])
         else:
