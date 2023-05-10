@@ -38,9 +38,9 @@ def productCards(products, product):
 def get_content():
     try:
         query_1 = Menu.query.filter_by(visibility='visible').order_by(Menu.priorities).all()
-        query_2 = Product_menu.query.filter_by(visibility='visible', solutions_menu_id='2').order_by(Product_menu.priorities).all()
-        query_3 = Solution.query.filter_by(visibility='visible', solutions_menu_id='2').first()
-        query_4 = SEO.query.filter_by(solutions_menu_id='1').all()
+        query_2 = Product_menu.query.filter_by(visibility='visible', solutions_menu_id='3').order_by(Product_menu.priorities).all()
+        query_3 = Solution.query.filter_by(visibility='visible', solutions_menu_id='3').first()
+        query_4 = SEO.query.filter_by(solutions_menu_id='3').all()
         return [query_1, query_2, query_3, query_4]
     except:
         return False
