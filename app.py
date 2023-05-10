@@ -1,5 +1,6 @@
 # Other libraries
 import re
+import os.path
 
 # Flask, WSGI libraries
 from flask import Flask, render_template, request, redirect, flash
@@ -16,7 +17,12 @@ from Bushing.bushing import bushing
 
 # --- CONFIGURATION BLOCK ---
 application = Flask (__name__)
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///content.db'
+
+# Configurate abs path for database
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+db_path = os.path.join(BASE_DIR, "content.db")
+application.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 application.config["SECRET_KEY"] = CONFIG["SECRET_KEY"]
