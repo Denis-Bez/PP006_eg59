@@ -4,7 +4,7 @@ spam_filter = {
     'name': ['Zimer', 'RobertLot', 'https', 'http', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
             'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
-            'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens'
+            'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin'
             ],
     'phone': [],
     'email': ['jenay454', 'kautksuhsk', 'generic'],
@@ -16,6 +16,7 @@ spam_filter = {
     'Яндекс Директа', 'Get millions', 'привлекаем клиентов', 'опубликовать книгу', 'www', 'секс', 'Gillian', 'Rininger', 'Срочно набираем сотрудников',
     'Помогу вам увеличить', 'купить пару-тройку', 'very interesting', 'casino', 'farmacia', 'Запарили спамеры', 'Hey guys', 'Юридический адрес в Новосибирске',
     'Купить виллу', 'bonus', 'Заинтересовал ваш продукт, можете перезвонить', 'хороший велосипед', 'Благотворительный фонд', 'по вашим товарам и доставке',
-    'Аренда автобуса', 'Бесплатно продвинем', 'продвижение сайтов', 'роста продаж', 'xyz', 'создание сайтов', 'сайтов'
+    'Аренда автобуса', 'Бесплатно продвинем', 'продвижение сайтов', 'роста продаж', 'xyz', 'создание сайтов', 'сайтов', 'создание сайта',
+    'перезвоните в любое удобное время'
     ]
 }
