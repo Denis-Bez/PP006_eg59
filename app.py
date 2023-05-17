@@ -163,6 +163,11 @@ def email():
                 if re.search(spam_text, name):
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                     return redirect ("/")
+            for spam_text in spam_filter["email"]:
+                print(spam_text)
+                if re.search(spam_text, email):
+                    flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
+                    return redirect ("/")
         except Exception as e:
             msg_error = Message("Ошибка на сайте eg59.ru", recipients=["v417459@yandex.ru"])
             msg_error.body = ("Ошибка при работе спам-фильтра")
