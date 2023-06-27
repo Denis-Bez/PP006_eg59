@@ -5,7 +5,7 @@ spam_filter = {
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
             'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin', 'Екатерина Игоревна', 'Bulldogs',
-            'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel'
+            'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella'
             ],
     'phone': [],
     'email': ['jenay454', 'kautksuhsk', 'generic'],
@@ -19,6 +19,6 @@ spam_filter = {
     'Купить виллу', 'bonus', 'Заинтересовал ваш продукт, можете перезвонить', 'хороший велосипед', 'Благотворительный фонд', 'по вашим товарам и доставке',
     'Аренда автобуса', 'Бесплатно продвинем', 'продвижение сайтов', 'роста продаж', 'xyz', 'создание сайтов', 'сайтов', 'создание сайта',
     'перезвоните в любое удобное время', 'Хотел бы сделать заказ в вашей компании', 'Перезвоните', 'Webcams', 'рассылок', 'можно вечером даже', 'slot', 'рассылок',
-    'наберите', 'snippet', 'websites', 'index', 'host', 'Домофонные', '</', 'рассылки', '4Mac', 'hot leads'
+    'наберите', 'snippet', 'websites', 'index', 'host', 'Домофонные', '</', 'рассылки', '4Mac', 'hot leads', 'Временная регистрация'
     ]
 }
