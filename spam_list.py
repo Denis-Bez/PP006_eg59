@@ -5,7 +5,7 @@ spam_filter = {
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
             'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin', 'Екатерина Игоревна', 'Bulldogs',
-            'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella'
+            'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella', 'Samuel'
             ],
     'phone': [],
     'email': ['jenay454', 'kautksuhsk', 'generic'],
