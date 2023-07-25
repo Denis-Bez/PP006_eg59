@@ -1,7 +1,7 @@
 # Спам фильтр при отправке заявок
 # Проверку спам фильтра можно провести с помощью метода пересечения множеств (нужна сортировка)
 spam_filter = {
-    'name': ['Zimer', 'RobertLot', 'https', 'http', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
+    'name': ['Zimer', 'RobertLot', 'http', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
             'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin', 'Екатерина Игоревна', 'Bulldogs',
