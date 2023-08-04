@@ -6,7 +6,7 @@ spam_filter = {
             'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin', 'Екатерина Игоревна', 'Bulldogs',
             'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella', 'Samuel', 'Bradley', 'XRumer', 'Test', 
-            'LeotaCacle', 'Iskusstven', 'Billie', 'Fes'
+            'LeotaCacle', 'Iskusstven', 'Billie', 'Fes', 'Technology_nzOi'
             ],
     'phone': [],
     'email': ['jenay454', 'kautksuhsk', 'generic'],
@@ -21,6 +21,6 @@ spam_filter = {
     'Аренда автобуса', 'Бесплатно продвинем', 'продвижение сайтов', 'роста продаж', 'xyz', 'создание сайтов', 'сайтов', 'создание сайта',
     'перезвоните в любое удобное время', 'Хотел бы сделать заказ в вашей компании', 'Перезвоните', 'Webcams', 'рассылок', 'можно вечером даже', 'slot', 'рассылок',
     'наберите', 'snippet', 'websites', 'index', 'host', 'Домофонные', '</', 'рассылки', '4Mac', 'hot leads', 'Временная регистрация', 'www.', '.ru', 'Домофон',
-    'And Bye', 'форекс', 'Телетрейд', 'writes', 'Высокая технология', '$', ' NFTs'
+    'And Bye', 'форекс', 'Телетрейд', 'writes', 'Высокая технология', '$', ' NFTs', 'AI', 'Happening'
     ]
 }
