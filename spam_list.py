@@ -3,7 +3,7 @@
 spam_filter = {
     'name': ['Zimer', 'Robert', 'http', 'RobertRemia', 'Clezerip', 'AlexBess', 'Alisa', 'Lot', 'David', 'Remia', 'William', 'Miprog',
             'Albert', 'Fot', 'tetcher', 'Normanzer', 'Raymondtuh', 'Shisfieks', 'Ruby', 'Taylor', 'kzkazkayap', 'Oliverwxb', 'Olivergwg', 'Kazkzrdvap',
-            'Alexandratib', 'Sergio', 'Alexandratib', 'MikhailRV', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
+            'Alexandratib', 'Sergio', 'Alexandratib', 'Mikhail', 'KzkazSok', 'Kkkzellliz', 'Alexandratib', 'Kzkktofloum', 'casino', 'Rolando', 'Scottbar',
             'BuildGroup', 'Tim', 'bonus', 'Monte', 'Marcusnop', 'Demetria', 'Prodvigenie', 'Garland', 'Jens', 'Kevin', 'Екатерина Игоревна', 'Bulldogs',
             'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella', 'Samuel', 'Bradley', 'XRumer', 'Test', 
             'LeotaCacle', 'Iskusstven', 'Billie', 'Fes', 'Technology_nzOi', 'Product'
