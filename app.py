@@ -51,8 +51,6 @@ application.register_blueprint(own, url_prefix='/own') # A Subsite of "Own produ
 def index():
         content = get_all([Menu, Solutions_menu])
         seo = get_seo('')
-        for i in content[1]:
-            print(i.title)
         if content and seo:
             return render_template('index.html', seo=seo, menu=content[0], solution_menu=content[1])
         else:
@@ -156,15 +154,14 @@ def email():
                 return redirect ("/")
             for spam_text in spam_filter["text"]:
                 if re.search(spam_text, text):
+                    print(spam_text)
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                     return redirect ("/")
             for spam_text in spam_filter["name"]:
-                print(spam_text)
                 if re.search(spam_text, name):
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                     return redirect ("/")
             for spam_text in spam_filter["email"]:
-                print(spam_text)
                 if re.search(spam_text, email):
                     flash("Заявка распознана системой как спам! Попробуйте написать нам на почту office@eg59.ru или позвонить по телефону +7 (342) 200-85-05", category="danger")
                     return redirect ("/")
