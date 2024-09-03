@@ -24,5 +24,6 @@ spam_filter = {
              'Перезвоните', 'Webcams', 'рассылок', 'можно вечером даже', 'slot', 'рассылок', 'наберите', 'snippet', 'websites', 
              'index', 'host', 'Домофонные', '<', 'рассылки', '4Mac', 'hot leads', 'Временная регистрация', 'www.', '.ru', 'Домофон', 
              'And Bye', 'форекс', 'Телетрейд', 'writes', 'Высокая технология', 'NFTs', 'AI', 'Happening', 'Product', 'generic', 'дорогая', 
-             'непослушным', 'дождаться', 'gaming', 'web3', 'yahoo', 'yahoo', 'kinozapas', 'leadsmax', 'YAHOO', 'Cookies', 'базы ИП']
+             'непослушным', 'дождаться', 'gaming', 'web3', 'yahoo', 'yahoo', 'kinozapas', 'leadsmax', 'YAHOO', 'Cookies', 'базы ИП', 'BTC', 
+             'script', 'ua/', 'бонус', 'jackpot', 'following', 'script', 'luxury', 'профиль', 'гардероб', 'form']
 }
