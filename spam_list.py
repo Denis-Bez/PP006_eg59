@@ -8,7 +8,7 @@ spam_filter = {
             'French', 'Genevieve', 'Bredt', 'Tryptin', 'Mohamed', 'Ghazi', 'Delphia', 'Chappel', 'Marcella', 'Samuel', 'Bradley', 'XRumer', 'Test', 
             'LeotaCacle', 'Iskusstven', 'Billie', 'Fes', 'Technology_nzOi', 'Product'
             ],
-    'phone': [],
+    'phone': [r'\+1'],
     'email': ['jenay454', 'kautksuhsk', 'generic'],
     'text': ['.ру', 'nуmрhоmaniа', 'нимфoманией', 'биceкcyал', 'любoвью', 'наркомании', 
              'Представьте, что Ваше коммерческое предложение', 'аутистам, онкобольным', 'href', 'porn', 
